@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Kyle Brown — Portfolio</title>
+<meta name="description" content="Aerospace & hardware projects by Kyle Brown." />
+<style>
+  :root{--max:72rem;--pad:clamp(16px,3vw,28px);--radius:12px;--accent:#0b3d91;--accent2:#1a73e8}
+  *{box-sizing:border-box} body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#0a0a0a;background:#fff}
+  a{color:inherit;text-decoration-thickness:.12em;text-underline-offset:.2em}
+  img{max-width:100%;height:auto;display:block;border-radius:var(--radius)}
+  header{padding:var(--pad);max-width:var(--max);margin:0 auto}
+  nav{display:flex;gap:16px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
+  nav .logo{margin-right:auto;font-weight:700;letter-spacing:.3px}
+  nav a:hover{color:var(--accent)}
+  .cta{border:2px solid var(--accent);padding:6px 12px;border-radius:999px}
+  h1{font-size:clamp(28px,4vw,44px);margin:24px 0 8px}
+  .stripe{height:4px;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:999px;margin-top:12px}
+  .grid{max-width:var(--max);margin:0 auto;padding:var(--pad);display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+  .card{padding:16px;border:1px solid #e6e6e6;border-radius:var(--radius);background:#fff;display:flex;flex-direction:column;gap:10px}
+  .tags{list-style:none;padding:0;margin:8px 0 0;display:flex;gap:8px;flex-wrap:wrap}
+  .tags li{font-size:12px;padding:4px 8px;border:1px solid #ddd;border-radius:999px;background:#f6f8ff}
+  .btn{display:inline-block;padding:8px 12px;border:1px solid #ddd;border-radius:8px}
+  footer{border-top:1px solid #eee;margin-top:40px;padding:var(--pad);text-align:center}
+  @media (prefers-color-scheme: dark){
+    body{background:#0e0e0e;color:#eaeaea}
+    .card{background:#151515;border-color:#333}
+    .tags li{background:#0f0f0f;border-color:#333}
+    footer{border-color:#222}
+    .cta{border-color:var(--accent2)}
+  }
+</style>
+</head>
+<body>
+<header>
+  <nav>
+    <a class="logo" href="/">Kyle Brown</a>
+    <a href="#projects">Projects</a>
+    <a href="#publications">Publications</a>
+    <a href="#about">About</a>
+    <a class="cta" href="mailto:Kylebrown978@yahoo.com">Contact</a>
+  </nav>
+  <h1>Hi, I’m Kyle Brown.</h1>
+  <p>UCLA aerospace grad focused on hardware, controls, and mission design.</p>
+  <div class="stripe"></div>
+</header>
+
+<main id="projects" class="grid">
+  <!-- Project 1 -->
+  <article class="card">
+    <img src="" alt="(Add a drone photo or CAD render here)">
+    <h2>Autonomous Drone (MAV)</h2>
+    <p>Carbon fiber/balsa MAV with IMU/LiDAR sensing, PD control, and waypoint optimizer. I owned controls & electronics.</p>
+    <ul class="tags"><li>Controls</li><li>IMU/LiDAR</li><li>C++/MATLAB</li><li>Teensy 4.0</li></ul>
+    <p>
+      <a class="btn" href="Autonomous_Drone_Report.pdf">Read report (PDF)</a>
+    </p>
+  </article>
+
+  <!-- Project 2 -->
+  <article class="card">
+    <img src="" alt="(Add a MAYFLY illustration or diagram here)">
+    <h2>MAYFLY — Comet Sample Return</h2>
+    <p>Payload & mission design for 311P/PANSTARRS sample return using solar electric propulsion and heritage instruments.</p>
+    <ul class="tags"><li>Mission Design</li><li>Payload</li><li>SEP</li><li>Falcon Heavy</li></ul>
+    <p>
+      <a class="btn" href="Mayfly_Sample_Return_Report.pdf">Read report (PDF)</a>
+    </p>
+  </article>
+</main>
+
+<section id="publications" class="grid">
+  <article class="card">
+    <h2>Reports & Publications</h2>
+    <p>Download my work and course team reports:</p>
+    <p>
+      <a class="btn" href="Autonomous_Drone_Report.pdf">Autonomous Drone (MAV)</a>
+      <a class="btn" href="Mayfly_Sample_Return_Report.pdf">MAYFLY Mission</a>
+      <a class="btn" href="Kyle_Brown_Resume.pdf">Résumé</a>
+    </p>
+  </article>
+</section>
+
+<section id="about" class="grid">
+  <article class="card">
+    <h2>About</h2>
+    <p>Hands-on with C++, MATLAB/Octave, SolidWorks. Interests in autonomous systems, controls, and mission design.</p>
+    <p>
+      <a class="btn" href="Kyle_Brown_Resume.pdf">Download Résumé</a>
+      <a class="btn" href="https://www.linkedin.com/in/kyle-v-brown">LinkedIn</a>
+    </p>
+  </article>
+</section>
+
+<footer>
+  <p>© <span id="y"></span> Kyle Brown · <a href="mailto:Kylebrown978@yahoo.com">Email</a> · <a href="https://www.linkedin.com/in/kyle-v-brown">LinkedIn</a></p>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
