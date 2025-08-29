@@ -6,28 +6,34 @@
 <title>Kyle Brown — Portfolio</title>
 <meta name="description" content="Aerospace & hardware projects by Kyle Brown.">
 <style>
-  :root{--max:72rem;--pad:clamp(16px,3vw,28px);--radius:12px;--accent:#0b3d91;--accent2:#1a73e8}
-  *{box-sizing:border-box} body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#0a0a0a;background:#fff}
+  :root{--max:72rem;--pad:clamp(16px,3vw,28px);--radius:14px;--accent:#0b3d91;--accent2:#1a73e8}
+  *{box-sizing:border-box} body{margin:0;font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#0c0c0c;background:#fff}
   a{color:inherit;text-decoration-thickness:.12em;text-underline-offset:.2em}
   img{max-width:100%;height:auto;display:block;border-radius:var(--radius)}
   header{padding:var(--pad);max-width:var(--max);margin:0 auto}
   nav{display:flex;gap:16px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
-  nav .logo{margin-right:auto;font-weight:700;letter-spacing:.3px}
+  nav .logo{margin-right:auto;font-weight:800;letter-spacing:.3px}
   nav a:hover{color:var(--accent)}
-  .cta{border:2px solid var(--accent);padding:6px 12px;border-radius:999px}
-  h1{font-size:clamp(28px,4vw,44px);margin:24px 0 8px}
-  .stripe{height:4px;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:999px;margin-top:12px}
-  .grid{max-width:var(--max);margin:0 auto;padding:var(--pad);display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-  .card{padding:16px;border:1px solid #e6e6e6;border-radius:var(--radius);background:#fff;display:flex;flex-direction:column;gap:10px}
-  .tags{list-style:none;padding:0;margin:8px 0 0;display:flex;gap:8px;flex-wrap:wrap}
+  .cta{border:2px solid var(--accent);padding:8px 14px;border-radius:999px}
+  h1{font-size:clamp(28px,4vw,46px);margin:24px 0 8px}
+  .subtitle{opacity:.8;margin:0 0 10px}
+  .stripe{height:5px;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:999px;margin-top:14px}
+  .wrap{max-width:var(--max);margin:0 auto;padding:var(--pad)}
+  .grid{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+  .card{padding:16px;border:1px solid #e8e8e8;border-radius:var(--radius);background:#fff;display:flex;flex-direction:column;gap:12px;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+  .tags{list-style:none;padding:0;margin:4px 0 0;display:flex;gap:8px;flex-wrap:wrap}
   .tags li{font-size:12px;padding:4px 8px;border:1px solid #ddd;border-radius:999px;background:#f6f8ff}
-  .btn{display:inline-block;padding:8px 12px;border:1px solid #ddd;border-radius:8px}
+  .btnrow{display:flex;gap:10px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:9px 12px;border:1px solid #dcdcdc;border-radius:9px;text-decoration:none}
+  .btn.primary{border-color:var(--accent);box-shadow:0 0 0 2px rgba(11,61,145,.08)}
+  section h2{margin:0 0 8px;font-size:22px}
   footer{border-top:1px solid #eee;margin-top:40px;padding:var(--pad);text-align:center}
   @media (prefers-color-scheme: dark){
-    body{background:#0e0e0e;color:#eaeaea}
-    .card{background:#151515;border-color:#333}
+    body{background:#0e0e0e;color:#e9e9e9}
+    .card{background:#141414;border-color:#2e2e2e}
     .tags li{background:#0f0f0f;border-color:#333}
-    footer{border-color:#222}
+    .btn{border-color:#3a3a3a}
+    footer{border-color:#1f1f1f}
     .cta{border-color:var(--accent2)}
   }
 </style>
@@ -37,54 +43,50 @@
   <nav>
     <a class="logo" href="/">Kyle Brown</a>
     <a href="#projects">Projects</a>
-    <a href="#publications">Publications</a>
     <a href="#about">About</a>
     <a class="cta" href="mailto:Kylebrown978@yahoo.com">Contact</a>
   </nav>
   <h1>Hi, I’m Kyle Brown.</h1>
-  <p>UCLA aerospace grad focused on hardware, controls, and mission design.</p>
+  <p class="subtitle">UCLA aerospace grad focused on hardware, controls, and mission design.</p>
   <div class="stripe"></div>
 </header>
 
-<main id="projects" class="grid">
-  <article class="card">
-    <img src="" alt="(Add a drone photo or CAD render here)">
-    <h2>Autonomous Drone (MAV)</h2>
-    <p>Carbon fiber/balsa MAV with IMU/LiDAR sensing, PD control, and waypoint optimizer. I owned controls & electronics.</p>
-    <ul class="tags"><li>Controls</li><li>IMU/LiDAR</li><li>C++/MATLAB</li><li>Teensy 4.0</li></ul>
-    <p><a class="btn" href="Autonomous_Drone_Report.pdf">Read report (PDF)</a></p>
-  </article>
+<section id="projects" class="wrap">
+  <h2>Featured Projects</h2>
+  <div class="grid">
+    <!-- Project 1 -->
+    <article class="card">
+      <img src="drone_cover.jpg" alt="Autonomous drone project cover">
+      <h3>Autonomous Drone (MAV)</h3>
+      <p>Carbon fiber/balsa MAV with IMU/LiDAR sensing, PD control, and a waypoint optimizer. I owned controls &amp; electronics.</p>
+      <ul class="tags"><li>Controls</li><li>IMU/LiDAR</li><li>C++/MATLAB</li><li>Teensy 4.0</li></ul>
+      <div class="btnrow">
+        <a class="btn primary" href="Autonomous_Drone_Report.pdf">Read report (PDF)</a>
+      </div>
+    </article>
 
-  <article class="card">
-    <img src="" alt="(Add a MAYFLY illustration or diagram here)">
-    <h2>MAYFLY — Comet Sample Return</h2>
-    <p>Payload & mission design for 311P/PANSTARRS sample return using solar electric propulsion and heritage instruments.</p>
-    <ul class="tags"><li>Mission Design</li><li>Payload</li><li>SEP</li><li>Falcon Heavy</li></ul>
-    <p><a class="btn" href="Mayfly_Sample_Return_Report.pdf">Read report (PDF)</a></p>
-  </article>
-</main>
-
-<section id="publications" class="grid">
-  <article class="card">
-    <h2>Reports & Publications</h2>
-    <p>Download my work and course team reports:</p>
-    <p>
-      <a class="btn" href="Autonomous_Drone_Report.pdf">Autonomous Drone (MAV)</a>
-      <a class="btn" href="Mayfly_Sample_Return_Report.pdf">MAYFLY Mission</a>
-      <a class="btn" href="Kyle_Brown_Resume.pdf">Résumé</a>
-    </p>
-  </article>
+    <!-- Project 2 -->
+    <article class="card">
+      <img src="mayfly_cover.jpg" alt="MAYFLY mission cover">
+      <h3>MAYFLY — Comet Sample Return</h3>
+      <p>Payload &amp; mission design for 311P/PANSTARRS sample return using solar electric propulsion and heritage instruments.</p>
+      <ul class="tags"><li>Mission Design</li><li>Payload</li><li>SEP</li><li>Falcon Heavy</li></ul>
+      <div class="btnrow">
+        <a class="btn primary" href="Mayfly_Sample_Return_Report.pdf">Read report (PDF)</a>
+      </div>
+    </article>
+  </div>
 </section>
 
-<section id="about" class="grid">
-  <article class="card">
-    <h2>About</h2>
+<section id="about" class="wrap">
+  <h2>About</h2>
+  <div class="card">
     <p>Hands-on with C++, MATLAB/Octave, SolidWorks. Interests in autonomous systems, controls, and mission design.</p>
-    <p>
+    <div class="btnrow">
       <a class="btn" href="Kyle_Brown_Resume.pdf">Download Résumé</a>
       <a class="btn" href="https://www.linkedin.com/in/kyle-v-brown">LinkedIn</a>
-    </p>
-  </article>
+    </div>
+  </div>
 </section>
 
 <footer>
