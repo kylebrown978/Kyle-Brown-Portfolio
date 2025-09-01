@@ -7,67 +7,112 @@
 <meta name="description" content="UAV systems, propulsion, CAD design, and mission design." />
 <style>
   :root{
-    --max: 92rem; --pad: clamp(16px,3vw,28px); --radius:14px;
-    --ink:#0b0f1a; --muted:#667085;
-    --accent:#0b3d91; --accent2:#1a73e8;
-    --surface:#ffffff; --bg:#f7f9ff;
+    --max: 96rem;
+    --pad: clamp(16px,3vw,28px);
+    --radius: 14px;
+
+    --ink: #0c1016;
+    --muted:#6b7280;
+
+    --accent:#0b3d91;      /* navy */
+    --accent2:#1a73e8;     /* bright blue */
+
+    --surface:#ffffff;
+    --surface-2:#f6f7fb;
+
+    --shadow: 0 1px 0 rgba(0,0,0,.05), 0 8px 30px rgba(2,13,40,.08);
   }
+
+  /* Base */
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{margin:0;font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff}
-  a{color:inherit;text-decoration-thickness:.12em;text-underline-offset:.2em}
+  body{
+    margin:0;
+    font:16px/1.7 Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    color:var(--ink);
+    background:#fff;
+  }
   img{max-width:100%;height:auto;display:block;border-radius:12px}
-  /* ---- sticky nav + hero -------------------------------------------------- */
-  .topbar{position:sticky;top:0;z-index:50;backdrop-filter:saturate(160%) blur(8px);
-    background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border-bottom:1px solid #ffffff26}
+  a{color:inherit;text-decoration-thickness:.12em;text-underline-offset:.2em}
+
+  /* Top bar */
+  .topbar{
+    position:sticky;top:0;z-index:50;
+    background:linear-gradient(90deg,var(--accent),var(--accent2));
+    color:#fff;border-bottom:1px solid #ffffff33;
+    backdrop-filter:saturate(160%) blur(8px);
+  }
   .topbar .wrap{max-width:var(--max);margin:0 auto;padding:10px var(--pad);display:flex;gap:16px;align-items:center}
   .brand{font-weight:800;letter-spacing:.2px}
   .spacer{flex:1}
-  .nav a{color:#fff;opacity:.95;margin-left:16px}
+  .nav a{color:#fff;opacity:.95;margin-left:18px}
   .nav a:hover{opacity:1}
-  .cta{border:2px solid #fff;padding:6px 12px;border-radius:999px}
-  header.hero{color:#fff;background:
-     radial-gradient(1200px 420px at 50% -10%, #e8f0ff66, transparent),
-     linear-gradient(90deg,var(--accent),var(--accent2))}
-  header.hero .wrap{max-width:var(--max);margin:0 auto;padding:clamp(28px,6vw,72px) var(--pad)}
-  h1{font-size:clamp(34px,5.2vw,64px);margin:10px 0}
-  .tagline{max-width:65ch;opacity:.96;margin:0}
+  .cta{border:2px solid #fff;padding:8px 12px;border-radius:999px}
+
+  /* Hero */
+  header.hero{
+    color:#fff;
+    background:
+      radial-gradient(1200px 420px at 50% -10%, #e8f0ff66, transparent),
+      linear-gradient(90deg,var(--accent),var(--accent2));
+  }
+  header.hero .wrap{max-width:var(--max);margin:0 auto;padding:clamp(28px,6vw,76px) var(--pad)}
+  h1{font-size:clamp(36px,5.3vw,66px);letter-spacing:.2px;margin:8px 0}
+  .tagline{max-width:70ch;opacity:.96;margin:0}
   .chips{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 0}
-  .chip{font-size:12px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25)}
+  .chip{font-size:12px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28)}
   .stripe{height:6px;background:linear-gradient(90deg,#fff,rgba(255,255,255,.65),#fff);border-radius:999px;margin-top:18px;opacity:.75}
-  /* ---- sections / cards --------------------------------------------------- */
-  section{scroll-margin-top:84px}
+
+  /* Sections & cards */
+  section{scroll-margin-top:88px}
   .wrap{max-width:var(--max);margin:0 auto;padding:var(--pad)}
-  h2{font-size:clamp(22px,2.4vw,30px);margin:0 0 10px}
+  h2{font-size:clamp(22px,2.4vw,30px);margin:0 0 12px}
   .muted{color:var(--muted)}
-  .card{padding:20px;border:1px solid #e8e8e8;border-radius:14px;background:var(--surface);box-shadow:0 1px 0 rgba(0,0,0,.04)}
+  .card{padding:22px;border:1px solid #e8e8ee;border-radius:14px;background:var(--surface);box-shadow:var(--shadow)}
   .two{display:grid;grid-template-columns:1.25fr 1fr;gap:28px}
   .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
-  .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-  .btn{display:inline-block;padding:10px 14px;border:1px solid #cfd4da;border-radius:10px;background:#fff;text-decoration:none}
-  .btn.primary{border-color:var(--accent);box-shadow:0 0 0 2px rgba(11,61,145,.08)}
-  .tags{list-style:none;margin:8px 0 0;padding:0;display:flex;gap:8px;flex-wrap:wrap}
-  .tags li{font-size:12px;padding:4px 8px;border:1px solid #ddd;border-radius:999px;background:#f6f8ff}
+  .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .btn{display:inline-block;padding:10px 14px;border:1px solid #ced4da;border-radius:10px;background:#fff;text-decoration:none}
+  .btn.primary{border-color:var(--accent);box-shadow:0 0 0 2px rgba(11,61,145,.10)}
+  .tags{list-style:none;margin:10px 0 0;padding:0;display:flex;gap:8px;flex-wrap:wrap}
+  .tags li{font-size:12px;padding:4px 8px;border:1px solid #dde3ea;border-radius:999px;background:#f4f7ff}
   .caption{font-size:12px;color:var(--muted);margin-top:6px}
+
+  /* About layout */
+  .about{
+    display:grid;grid-template-columns:260px 1fr;gap:26px;align-items:start
+  }
+  .headshot{
+    width:260px;height:260px;border-radius:16px;overflow:hidden;
+    background:
+      radial-gradient(circle at 30% 20%, #1a73e8 0%, #0b3d91 60%, #081b3a 100%);
+    box-shadow:var(--shadow);position:relative;display:flex;align-items:center;justify-content:center;color:#fff
+  }
+  .headshot img{width:100%;height:100%;object-fit:cover}
+  .avatar-initials{font-weight:800;font-size:56px;letter-spacing:.5px;opacity:.92}
+
   .skillset{display:flex;flex-wrap:wrap;gap:10px}
-  .skill{padding:8px 12px;border:1px solid #e2e8ff;background:#f0f4ff;border-radius:999px;font-size:13px}
-  footer{border-top:1px solid #eee;margin-top:42px;padding:var(--pad);text-align:center}
-  /* ---- responsive + dark -------------------------------------------------- */
-  @media (max-width:980px){.two{grid-template-columns:1fr}}
+  .skill{padding:8px 12px;border:1px solid #e2e8ff;background:#eef3ff;border-radius:999px;font-size:13px}
+
+  footer{border-top:1px solid #eaeaea;margin-top:46px;padding:var(--pad);text-align:center}
+
+  /* Responsive + dark */
+  @media (max-width:1020px){.two{grid-template-columns:1fr}}
+  @media (max-width:800px){.about{grid-template-columns:1fr}}
   @media (prefers-color-scheme: dark){
-    body{background:#0f0f12;color:#e9e9e9}
-    .topbar{border-color:#ffffff18}
-    .card{background:#151517;border-color:#2e2e33}
-    .btn{background:#101014;border-color:#35353c}
-    .tags li{background:#101014;border-color:#35353c}
-    .muted{color:#a6aab5}
-    footer{border-color:#222}
+    body{background:#0f1116;color:#e8eaee}
+    .topbar{border-color:#ffffff1a}
+    .card{background:#14161b;border-color:#22252c}
+    .btn{background:#0f1116;border-color:#2f3340}
+    .tags li{background:#121520;border-color:#2f3340}
+    .muted{color:#a3a9b6}
+    footer{border-color:#20232b}
   }
 </style>
 </head>
 <body>
 
-<!-- top bar -->
+<!-- NAV -->
 <div class="topbar">
   <div class="wrap">
     <a class="brand" href="#top">Kyle Brown</a>
@@ -81,6 +126,7 @@
   </div>
 </div>
 
+<!-- HERO -->
 <header id="top" class="hero">
   <div class="wrap">
     <h1>Aerospace Portfolio</h1>
@@ -107,11 +153,11 @@
       <div>
         <figure>
           <img src="drone_cad.png" alt="Autonomous Drone CAD isometric view">
-          <figcaption class="caption">Autonomous MAV — CAD & prototype development pipeline.</figcaption>
+          <figcaption class="caption">Autonomous MAV — CAD & prototype development.</figcaption>
         </figure>
         <div class="gallery" aria-label="Drone gallery">
           <img src="drones_line.jpeg" alt="Lineup of MAV prototypes">
-          <img src="drones_build.jpeg" alt="Electronics bench build with avionics wiring">
+          <img src="drones_build.jpeg" alt="Electronics bench build and wiring">
           <img src="drone_cad.png" alt="Drone CAD assembly detail">
         </div>
       </div>
@@ -129,7 +175,7 @@
         </ul>
         <h4>Key contributions</h4>
         <ul>
-          <li><strong>Controls:</strong> PD outer-loop with waypoint planner; telemetry + MATLAB tools for tuning.</li>
+          <li><strong>Controls:</strong> PD outer loop with waypoint planner; telemetry + MATLAB tools for tuning.</li>
           <li><strong>Integration:</strong> Carbon-fiber/balsa frame, sensor mounts, custom PDB; labeled, serviceable wiring.</li>
           <li><strong>Propulsion:</strong> Motor/prop/ESC selection; endurance & thrust optimization with safety margins.</li>
         </ul>
@@ -162,7 +208,7 @@
         <h4>Key contributions</h4>
         <ul>
           <li><strong>CAD:</strong> Modeled/packaged payload instrument bay and bus interfaces.</li>
-          <li><strong>Propulsion:</strong> Assisted SEP/chemical trade studies bound to power and schedule.</li>
+          <li><strong>Propulsion:</strong> Assisted SEP/chemical trade studies tied to power and schedule.</li>
           <li><strong>Coding:</strong> Trajectory sweep + margin tools used in design reviews.</li>
         </ul>
         <div class="btnrow">
@@ -190,12 +236,30 @@
   <!-- ABOUT -->
   <section id="about" class="wrap">
     <h2>About</h2>
-    <div class="card">
-      <p>I like the full stack: CAD & manufacturing, propulsion decisions, and control software. Recent work includes an autonomous micro-air vehicle and MAYFLY, a comet sample-return concept.</p>
-      <div class="btnrow">
-        <a class="btn" href="Kyle_Brown_Resume.pdf">Download Résumé</a>
-        <a class="btn" href="https://www.linkedin.com/in/kyle-v-brown">LinkedIn</a>
-        <a class="btn" href="mailto:Kylebrown978@yahoo.com">Email</a>
+    <div class="card about">
+      <!-- Headshot block: uses real photo if headshot.jpg exists; else shows initials -->
+      <div class="headshot">
+        <!-- If you upload headshot.jpg to the repo root, it will display automatically -->
+        <img src="headshot.jpg" alt="Headshot of Kyle Brown" onerror="this.style.display='none'; this.parentElement.querySelector('.avatar-initials').style.display='block';">
+        <div class="avatar-initials" style="display:none;">KB</div>
+      </div>
+
+      <div>
+        <p>I’m a recent Aerospace Engineering graduate from UCLA with a strong foundation in physics, mathematics, and mechanical systems—and a deep passion for solving complex, real-world problems. My academic experience sharpened my skills in areas like fluid dynamics, control systems, and structural analysis, and I developed proficiency in industry-standard tools including MATLAB, SolidWorks, and C++.</p>
+
+        <p>I’m particularly interested in aerodynamics, propulsion systems, and spacecraft design—fields where I can blend technical precision with creative problem-solving. I’ve also worked with simulation software such as COMSOL Multiphysics and enjoy visualizing complex systems to understand how they behave and interact.</p>
+
+        <p>Outside of engineering, I’ve built strong interpersonal and leadership skills through several years in the hospitality industry, including my time with Hillstone Restaurant Group. These experiences taught me the value of clear communication, teamwork under pressure, and delivering consistent results—all of which I carry into every technical challenge.</p>
+
+        <p>I’m currently seeking entry-level engineering roles where I can contribute to innovative projects, grow alongside experienced professionals, and continue learning every step of the way.</p>
+
+        <p>Let’s connect—I’m always excited to engage with others in aerospace, mechanical engineering, or related fields.</p>
+
+        <div class="btnrow" style="margin-top:14px">
+          <a class="btn" href="Kyle_Brown_Resume.pdf">Download Résumé</a>
+          <a class="btn" href="https://www.linkedin.com/in/kyle-v-brown">LinkedIn</a>
+          <a class="btn" href="mailto:Kylebrown978@yahoo.com">Email</a>
+        </div>
       </div>
     </div>
   </section>
