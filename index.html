@@ -7,80 +7,84 @@
 <meta name="description" content="UAV systems, propulsion, CAD design, and mission design." />
 <style>
   :root{
-    --max: 82rem;
-    --pad: clamp(16px,3vw,28px);
-    --radius: 14px;
-    --ink: #0b0f1a;
-    --muted: #667085;
-    --accent: #0b3d91;
-    --accent2: #1a73e8;
-    --bg: #f7f9ff;
+    --max: 92rem; --pad: clamp(16px,3vw,28px); --radius:14px;
+    --ink:#0b0f1a; --muted:#667085;
+    --accent:#0b3d91; --accent2:#1a73e8;
+    --surface:#ffffff; --bg:#f7f9ff;
   }
   *{box-sizing:border-box}
-  body{margin:0;font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff}
+  html{scroll-behavior:smooth}
+  body{margin:0;font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff}
   a{color:inherit;text-decoration-thickness:.12em;text-underline-offset:.2em}
-  img{max-width:100%;height:auto;display:block;border-radius:var(--radius)}
-  /* header / hero */
-  header{color:#fff;background:
-    radial-gradient(1200px 400px at 50% -10%, #e8f0ff55, transparent),
-    linear-gradient(90deg, var(--accent), var(--accent2));
-  }
-  .wrap{max-width:var(--max);margin:0 auto;padding:var(--pad)}
-  .nav{display:flex;gap:16px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
-  .nav .logo{margin-right:auto;font-weight:800;letter-spacing:.2px}
-  .nav a{opacity:.95}
+  img{max-width:100%;height:auto;display:block;border-radius:12px}
+  /* ---- sticky nav + hero -------------------------------------------------- */
+  .topbar{position:sticky;top:0;z-index:50;backdrop-filter:saturate(160%) blur(8px);
+    background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border-bottom:1px solid #ffffff26}
+  .topbar .wrap{max-width:var(--max);margin:0 auto;padding:10px var(--pad);display:flex;gap:16px;align-items:center}
+  .brand{font-weight:800;letter-spacing:.2px}
+  .spacer{flex:1}
+  .nav a{color:#fff;opacity:.95;margin-left:16px}
   .nav a:hover{opacity:1}
-  .cta{border:2px solid #fff;padding:8px 14px;border-radius:999px}
-  h1{font-size:clamp(32px,5vw,56px);margin:22px 0 10px}
-  .tagline{max-width:60ch;opacity:.95;margin:0 0 14px}
-  .chips{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 0}
+  .cta{border:2px solid #fff;padding:6px 12px;border-radius:999px}
+  header.hero{color:#fff;background:
+     radial-gradient(1200px 420px at 50% -10%, #e8f0ff66, transparent),
+     linear-gradient(90deg,var(--accent),var(--accent2))}
+  header.hero .wrap{max-width:var(--max);margin:0 auto;padding:clamp(28px,6vw,72px) var(--pad)}
+  h1{font-size:clamp(34px,5.2vw,64px);margin:10px 0}
+  .tagline{max-width:65ch;opacity:.96;margin:0}
+  .chips{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 0}
   .chip{font-size:12px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25)}
   .stripe{height:6px;background:linear-gradient(90deg,#fff,rgba(255,255,255,.65),#fff);border-radius:999px;margin-top:18px;opacity:.75}
-  /* sections */
-  section h2{margin:0 0 10px;font-size:clamp(20px,2.2vw,28px)}
+  /* ---- sections / cards --------------------------------------------------- */
+  section{scroll-margin-top:84px}
+  .wrap{max-width:var(--max);margin:0 auto;padding:var(--pad)}
+  h2{font-size:clamp(22px,2.4vw,30px);margin:0 0 10px}
   .muted{color:var(--muted)}
-  .card{padding:18px;border:1px solid #e8e8e8;border-radius:var(--radius);background:#fff;box-shadow:0 1px 0 rgba(0,0,0,.04)}
-  .two{display:grid;grid-template-columns:1.25fr 1fr;gap:24px}
-  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+  .card{padding:20px;border:1px solid #e8e8e8;border-radius:14px;background:var(--surface);box-shadow:0 1px 0 rgba(0,0,0,.04)}
+  .two{display:grid;grid-template-columns:1.25fr 1fr;gap:28px}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
   .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-  .btn{display:inline-block;padding:10px 14px;border:1px solid #dcdcdc;border-radius:9px;background:#fff;text-decoration:none}
+  .btn{display:inline-block;padding:10px 14px;border:1px solid #cfd4da;border-radius:10px;background:#fff;text-decoration:none}
   .btn.primary{border-color:var(--accent);box-shadow:0 0 0 2px rgba(11,61,145,.08)}
-  .tags{list-style:none;padding:0;margin:8px 0 0;display:flex;gap:8px;flex-wrap:wrap}
+  .tags{list-style:none;margin:8px 0 0;padding:0;display:flex;gap:8px;flex-wrap:wrap}
   .tags li{font-size:12px;padding:4px 8px;border:1px solid #ddd;border-radius:999px;background:#f6f8ff}
-  .grid{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
   .caption{font-size:12px;color:var(--muted);margin-top:6px}
   .skillset{display:flex;flex-wrap:wrap;gap:10px}
   .skill{padding:8px 12px;border:1px solid #e2e8ff;background:#f0f4ff;border-radius:999px;font-size:13px}
-  footer{border-top:1px solid #eee;margin-top:40px;padding:var(--pad);text-align:center}
-  @media (max-width: 900px){ .two{grid-template-columns:1fr} }
+  footer{border-top:1px solid #eee;margin-top:42px;padding:var(--pad);text-align:center}
+  /* ---- responsive + dark -------------------------------------------------- */
+  @media (max-width:980px){.two{grid-template-columns:1fr}}
   @media (prefers-color-scheme: dark){
-    body{background:#0e0e0e;color:#e9e9e9}
-    .card{background:#151515;border-color:#2e2e2e}
-    .btn{background:#0f0f0f;border-color:#343434}
-    .tags li{background:#0f0f0f;border-color:#333}
+    body{background:#0f0f12;color:#e9e9e9}
+    .topbar{border-color:#ffffff18}
+    .card{background:#151517;border-color:#2e2e33}
+    .btn{background:#101014;border-color:#35353c}
+    .tags li{background:#101014;border-color:#35353c}
     .muted{color:#a6aab5}
-    header{background:
-      radial-gradient(1200px 400px at 50% -10%, #101a3a, transparent),
-      linear-gradient(90deg, var(--accent), var(--accent2));
-    }
-    .cta{border-color:#fff}
-    footer{border-color:#1f1f1f}
+    footer{border-color:#222}
   }
 </style>
 </head>
 <body>
 
-<header>
+<!-- top bar -->
+<div class="topbar">
   <div class="wrap">
+    <a class="brand" href="#top">Kyle Brown</a>
+    <div class="spacer"></div>
     <nav class="nav">
-      <a class="logo" href="#top">Kyle Brown</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
       <a href="#about">About</a>
       <a class="cta" href="mailto:Kylebrown978@yahoo.com">Contact</a>
     </nav>
-    <h1 id="top">Aerospace Portfolio</h1>
-    <p class="tagline">UAV systems, propulsion, CAD design, and mission design. I like building things that fly—and the software that guides them.</p>
+  </div>
+</div>
+
+<header id="top" class="hero">
+  <div class="wrap">
+    <h1>Aerospace Portfolio</h1>
+    <p class="tagline">UAV systems, propulsion, CAD design, and mission design. I build the hardware <em>and</em> the control software that makes it fly.</p>
     <div class="chips">
       <span class="chip">SolidWorks</span>
       <span class="chip">C++ / MATLAB</span>
@@ -93,39 +97,41 @@
 
 <main>
 
-  <!-- Projects -->
+  <!-- PROJECTS -->
   <section id="projects" class="wrap">
     <h2>Featured Projects</h2>
-    <p class="muted">Impact-focused write-ups with visuals and links to full documentation.</p>
+    <p class="muted">Detailed write-ups with visuals and links to full reports.</p>
 
-    <!-- Drone -->
+    <!-- DRONE -->
     <article class="card two" aria-labelledby="proj-drone">
       <div>
         <figure>
-          <img src="drone_cad.png" alt="Autonomous Drone CAD isometric view" />
-          <figcaption class="caption">Autonomous Drone (MAV) — CAD isometric view.</figcaption>
+          <img src="drone_cad.png" alt="Autonomous Drone CAD isometric view">
+          <figcaption class="caption">Autonomous MAV — CAD & prototype development pipeline.</figcaption>
         </figure>
         <div class="gallery" aria-label="Drone gallery">
-          <img src="drones_line.jpeg" alt="Lineup of MAV prototypes" />
-          <img src="drone_build.jpeg" alt="Electronics bench build of MAV" />
-          <img src="drone_cad.png" alt="Drone CAD detail" />
+          <img src="drones_line.jpeg" alt="Lineup of MAV prototypes">
+          <img src="drones_build.jpeg" alt="Electronics bench build with avionics wiring">
+          <img src="drone_cad.png" alt="Drone CAD assembly detail">
         </div>
       </div>
       <div>
         <h3 id="proj-drone">Autonomous Drone (MAV)</h3>
         <p><strong>Role:</strong> Controls &amp; electronics, CAD, propulsion integration</p>
         <p>
-          Modeled the airframe and avionics stack in CAD, selected and integrated propulsion (motors/ESC/props),
-          and implemented sensing &amp; control (IMU + LiDAR; PD outer loop with waypoint sequencing).
+          Led the flight-control stack and physical integration for a micro air vehicle. In CAD, I designed the
+          airframe and avionics bay, created mounts for LiDAR and IMU sensors, and laid out a serviceable harness.
+          For propulsion I ran motor/prop/ESC trades against endurance and thrust-to-weight targets, then integrated
+          the power distribution and tuned performance on the bench and in flight.
         </p>
         <ul class="tags">
-          <li>CAD (SolidWorks)</li><li>Propulsion trades</li><li>LiDAR/IMU</li><li>C++/MATLAB</li><li>Teensy 4.0</li>
+          <li>CAD (SolidWorks)</li><li>Propulsion sizing</li><li>LiDAR/IMU</li><li>C++/MATLAB</li><li>Teensy 4.0</li>
         </ul>
         <h4>Key contributions</h4>
         <ul>
-          <li><strong>CAD &amp; integration:</strong> carbon-fiber/balsa frame, avionics bay, sensor mounts.</li>
-          <li><strong>Propulsion:</strong> motor/prop/ESC sizing, power distribution, thrust vs. endurance tuning.</li>
-          <li><strong>Coding:</strong> PD control + waypoint logic; telemetry logging and MATLAB analysis.</li>
+          <li><strong>Controls:</strong> PD outer-loop with waypoint planner; telemetry + MATLAB tools for tuning.</li>
+          <li><strong>Integration:</strong> Carbon-fiber/balsa frame, sensor mounts, custom PDB; labeled, serviceable wiring.</li>
+          <li><strong>Propulsion:</strong> Motor/prop/ESC selection; endurance & thrust optimization with safety margins.</li>
         </ul>
         <div class="btnrow">
           <a class="btn primary" href="Autonomous_Drone_Report.pdf">Project report (PDF)</a>
@@ -134,28 +140,30 @@
     </article>
 
     <!-- MAYFLY -->
-    <article class="card two" aria-labelledby="proj-mayfly" style="margin-top:24px">
+    <article class="card two" aria-labelledby="proj-mayfly" style="margin-top:28px">
       <div>
         <figure>
-          <img src="mayfly_cad.png" alt="MAYFLY sample-return spacecraft CAD render" />
-          <figcaption class="caption">MAYFLY comet sample-return — bus &amp; payload CAD concept.</figcaption>
+          <img src="mayfly_cad.png" alt="MAYFLY sample-return spacecraft CAD render">
+          <figcaption class="caption">MAYFLY — comet sample-return bus & payload concept.</figcaption>
         </figure>
       </div>
       <div>
         <h3 id="proj-mayfly">MAYFLY — Comet Sample Return</h3>
         <p><strong>Role:</strong> Payload/bus CAD, propulsion &amp; trajectory trades, analysis scripts</p>
         <p>
-          Contributed spacecraft CAD (bus + payload interface), assisted SEP vs. chemical propulsion trades and power budgets,
-          and wrote helper scripts for trajectory and margin sweeps used in reviews.
+          Contributed CAD for the payload bay and bus interfaces, ensuring clear mass and volume budgets.
+          Participated in propulsion trades (SEP vs. chemical) linked to power availability, mass growth,
+          and mission timeline. Authored small analysis scripts to sweep trajectory options and power/mass
+          margins for reviews, helping the team converge on a feasible architecture.
         </p>
         <ul class="tags">
           <li>Mission design</li><li>CAD (SolidWorks)</li><li>Propulsion trades</li><li>Analysis scripts</li>
         </ul>
         <h4>Key contributions</h4>
         <ul>
-          <li><strong>CAD:</strong> modeled payload instrument bay and bus interfaces.</li>
-          <li><strong>Propulsion:</strong> SEP/chemical trade participation linking power, mass, and schedule.</li>
-          <li><strong>Coding:</strong> trajectory + mass/power margin scripts for design decisions.</li>
+          <li><strong>CAD:</strong> Modeled/packaged payload instrument bay and bus interfaces.</li>
+          <li><strong>Propulsion:</strong> Assisted SEP/chemical trade studies bound to power and schedule.</li>
+          <li><strong>Coding:</strong> Trajectory sweep + margin tools used in design reviews.</li>
         </ul>
         <div class="btnrow">
           <a class="btn primary" href="Mayfly_Sample_Return_Report.pdf">Mission report (PDF)</a>
@@ -164,7 +172,7 @@
     </article>
   </section>
 
-  <!-- Skills -->
+  <!-- SKILLS -->
   <section id="skills" class="wrap">
     <h2>Skills</h2>
     <div class="card">
@@ -179,11 +187,11 @@
     </div>
   </section>
 
-  <!-- About -->
+  <!-- ABOUT -->
   <section id="about" class="wrap">
     <h2>About</h2>
     <div class="card">
-      <p>I’m an aerospace engineer who enjoys the full stack: CAD &amp; manufacturing, propulsion decisions, and control software. Recent work includes an autonomous micro-air vehicle and MAYFLY, a comet sample-return concept.</p>
+      <p>I like the full stack: CAD & manufacturing, propulsion decisions, and control software. Recent work includes an autonomous micro-air vehicle and MAYFLY, a comet sample-return concept.</p>
       <div class="btnrow">
         <a class="btn" href="Kyle_Brown_Resume.pdf">Download Résumé</a>
         <a class="btn" href="https://www.linkedin.com/in/kyle-v-brown">LinkedIn</a>
