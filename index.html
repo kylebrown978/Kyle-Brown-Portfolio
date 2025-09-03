@@ -2,28 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Kyle Brown – Aerospace Portfolio</title>
-  <meta name="description" content="Portfolio of Kyle Brown: aerospace engineering, UAVs, propulsion, CAD, and systems integration.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kyle Brown – Portfolio</title>
+  <meta name="description" content="Kyle Brown Aerospace Portfolio">
   <style>
-    :root {
-      --bg: #0d1117;
-      --card: #161b22;
-      --text: #e6edf3;
-      --muted: #8b949e;
-      --accent: #58a6ff;
-      --accent2: #ff7b72;
-      --radius: 12px;
-    }
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      font-family: system-ui, sans-serif;
       line-height: 1.6;
+      background: #f9f9f9;
+      color: #222;
     }
     header {
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      background: #003366;
       color: white;
       padding: 1rem 2rem;
       display: flex;
@@ -39,13 +30,13 @@
     }
     nav a:hover { text-decoration: underline; }
     main { padding: 2rem; max-width: 900px; margin: auto; }
-    h2 { color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: .25rem; }
+    h2 { color: #003366; border-bottom: 2px solid #003366; padding-bottom: .25rem; }
     .card {
-      background: var(--card);
-      border-radius: var(--radius);
+      background: white;
+      border-radius: 8px;
       padding: 1.5rem;
       margin-bottom: 2rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,.4);
+      box-shadow: 0 2px 5px rgba(0,0,0,.1);
     }
     .about {
       display: flex;
@@ -57,20 +48,8 @@
       height: 140px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid var(--accent);
+      border: 2px solid #003366;
     }
-    .btnrow a {
-      display: inline-block;
-      margin: .25rem;
-      padding: .5rem 1rem;
-      border-radius: var(--radius);
-      background: var(--accent);
-      color: white;
-      text-decoration: none;
-      font-size: .9rem;
-      font-weight: 600;
-    }
-    .btnrow a:hover { background: var(--accent2); }
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
@@ -79,15 +58,26 @@
     }
     .gallery img {
       width: 100%;
-      border-radius: var(--radius);
-      background: #222;
+      border-radius: 6px;
       object-fit: cover;
     }
+    .btnrow a {
+      display: inline-block;
+      margin: .25rem;
+      padding: .5rem 1rem;
+      border-radius: 6px;
+      background: #003366;
+      color: white;
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 600;
+    }
+    .btnrow a:hover { background: #0055aa; }
     footer {
       text-align: center;
       padding: 2rem;
       font-size: .85rem;
-      color: var(--muted);
+      color: #555;
     }
   </style>
 </head>
@@ -104,17 +94,16 @@
 
   <main>
     <!-- ABOUT -->
-    <section id="about" class="wrap">
+    <section id="about">
       <h2>About</h2>
       <div class="card about">
-        <img src="Self_portrait.png" alt="Headshot of Kyle Brown"
-             onerror="this.style.display='none';">
+        <img src="Self_portrait.png" alt="Kyle Brown headshot" onerror="this.style.display='none';">
         <div>
-          <p>I’m a recent Aerospace Engineering graduate from UCLA with a strong foundation in physics, mathematics, and mechanical systems—and a passion for solving complex, real-world problems. My academic experience sharpened my skills in areas like fluid dynamics, control systems, and structural analysis, and I’ve developed proficiency in industry-standard tools such as MATLAB, SolidWorks, and C++.</p>
+          <p>I’m a recent Aerospace Engineering graduate from UCLA with a strong foundation in physics, mathematics, and mechanical systems—and a passion for solving real-world problems. My academic experience sharpened my skills in areas like fluid dynamics, control systems, and structural analysis, and I’ve developed proficiency in MATLAB, SolidWorks, and C++.</p>
           <p>I’m particularly interested in aerodynamic systems, propulsion, and spacecraft design—fields where technical precision meets creative problem solving. I also enjoy simulation and visualization tools like COMSOL to understand how systems behave and interact.</p>
-          <p>Outside of engineering, I’ve built strong interpersonal and leadership skills through several years in the hospitality industry. These experiences taught me clear communication, teamwork under pressure, and delivering consistent results—all of which I carry into technical challenges.</p>
+          <p>Let’s connect—I’m excited to contribute to innovative aerospace and mechanical engineering projects and continue learning every step of the way.</p>
           <div class="btnrow">
-            <a href="Kyle_Brown_Resume.pdf?v=6" target="_blank">Download Résumé</a>
+            <a href="Kyle_Brown_Resume.pdf" target="_blank">Download Résumé</a>
             <a href="https://www.linkedin.com/in/kyle-v-brown" target="_blank">LinkedIn</a>
             <a href="mailto:Kylebrown978@yahoo.com">Email</a>
           </div>
@@ -130,18 +119,18 @@
       <div class="card">
         <h3>Autonomous Drone (MAV)</h3>
         <p><strong>Role:</strong> Controls & electronics, CAD, propulsion integration</p>
-        <p>I designed the airframe and avionics bay in CAD, packaged LiDAR/IMU sensors, and integrated propulsion (motors/ESCs/props). Developed flight-control stack with waypoint sequencing, telemetry, and auto-logging. Ran bench + flight tests to validate stability.</p>
+        <p>I designed the airframe and avionics bay in CAD, packaged LiDAR/IMU sensors, and integrated propulsion. Developed a flight-control stack with waypoint sequencing, telemetry, and auto-logging. Ran bench + flight tests to validate stability.</p>
         <div class="gallery">
-          <img src="drone_cad.png" alt="Drone CAD model">
+          <img src="drone_cad.png" alt="Drone CAD">
           <img src="drones_build.png" alt="Drone build photo">
           <img src="drones_line.png" alt="Drone wiring diagram">
         </div>
         <div class="btnrow">
-          <a href="Autonomous_Drone_report.pdf?v=6" target="_blank">Full Report (PDF)</a>
+          <a href="Autonomous_Drone_report.pdf" target="_blank">Full Report (PDF)</a>
         </div>
       </div>
 
-      <!-- Mayfly Sample Return -->
+      <!-- Mayfly -->
       <div class="card">
         <h3>Mayfly Sample Return Vehicle</h3>
         <p><strong>Role:</strong> CAD design, propulsion trades, integration</p>
@@ -150,7 +139,7 @@
           <img src="mayfly_cad.png" alt="Mayfly CAD design">
         </div>
         <div class="btnrow">
-          <a href="Mayfly_Sample_Return_Report.pdf?v=6" target="_blank">Full Report (PDF)</a>
+          <a href="Mayfly_Sample_Return_Report.pdf" target="_blank">Full Report (PDF)</a>
         </div>
       </div>
     </section>
