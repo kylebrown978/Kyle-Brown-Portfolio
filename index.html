@@ -11,15 +11,15 @@
     --pad: clamp(16px,3.2vw,28px);
     --radius: 14px;
 
-    --ink:#0e1116;            
+    --ink:#0e1116;
     --muted:#8ba0c7;
-    --bg:#0b1020;             
-    --panel:#11172b;          
-    --panel-2:#0f1526;        
+    --bg:#0b1020;
+    --panel:#11172b;
+    --panel-2:#0f1526;
     --border:#1f2741;
 
-    --brand:#2dc0ff;          
-    --brand-2:#7a5cff;        
+    --brand:#2dc0ff;
+    --brand-2:#7a5cff;
 
     --shadow: 0 10px 40px rgba(0,0,0,.25);
   }
@@ -30,9 +30,10 @@
     margin:0;
     font:16px/1.7 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
     color:#e8ecff;
-    background: radial-gradient(80rem 32rem at 10% -10%, #1b2444 0%, transparent 70%),
-                radial-gradient(80rem 32rem at 110% -20%, #1a2742 0%, transparent 70%),
-                var(--bg);
+    background:
+      radial-gradient(80rem 32rem at 10% -10%, #1b2444 0%, transparent 70%),
+      radial-gradient(80rem 32rem at 110% -20%, #1a2742 0%, transparent 70%),
+      var(--bg);
   }
   a{color:var(--brand);text-decoration-thickness:.12em;text-underline-offset:.22em}
   img{max-width:100%;height:auto;display:block;border-radius:12px}
@@ -82,15 +83,34 @@
     font-weight:700;letter-spacing:.2px
   }
 
-  .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
-  .gallery img.thumb{aspect-ratio:4/3;width:100%;object-fit:cover;border-radius:10px}
+  /* Projects media-first layout (cleaner sizes) */
+  figure{margin:0}
+  .heroimg{
+    margin:0 auto;
+    max-width:780px;
+    border:1px solid #203055;
+    box-shadow:0 8px 24px rgba(0,0,0,.25)
+  }
+  .caption{font-size:12px;color:#b8c4e3;margin-top:6px;text-align:center}
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:12px;
+    margin-top:16px
+  }
+  .gallery img.thumb{
+    aspect-ratio:4/3;
+    width:100%;
+    object-fit:cover;
+    border:1px solid #203055;
+    border-radius:10px
+  }
 
   .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
   .btn{display:inline-block;padding:10px 14px;border:1px solid #2a355e;border-radius:10px;background:#0e1733;color:#e8ecff;text-decoration:none}
   .btn.primary{border-color:#36b8ff;box-shadow:0 0 0 2px rgba(45,192,255,.16)}
   .tags{list-style:none;margin:10px 0 0;padding:0;display:flex;gap:8px;flex-wrap:wrap}
   .tags li{font-size:12px;padding:5px 9px;border:1px solid #2a355e;border-radius:999px;background:#0c1637;color:#cfe2ff}
-  .caption{font-size:12px;color:#b8c4e3;margin-top:6px}
 
   .alt{background:var(--panel-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 
@@ -109,11 +129,15 @@
 
   footer{border-top:1px solid var(--border);padding:var(--pad);text-align:center;color:#b8c4e3}
 
-  @media (max-width:1020px){.two{grid-template-columns:1fr}}
   @media (max-width:860px){.about{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+
+<!-- TEMP DEBUG BADGE: remove later -->
+<div style="position:fixed;inset:auto 12px 12px auto;background:#11172b;border:1px solid #2a355e;color:#cfe2ff;padding:6px 10px;border-radius:999px;font:12px/1.2 system-ui;z-index:9999">
+  v42
+</div>
 
 <!-- NAV -->
 <div class="topbar">
@@ -155,21 +179,26 @@
     <article class="card" aria-labelledby="proj-drone">
       <span class="ribbon">Autonomous Drone (MAV)</span>
       <figure>
-        <img src="drone_cad.png" alt="Autonomous Drone CAD isometric view" loading="eager">
+        <img class="heroimg" src="drone_cad.png" alt="Autonomous Drone CAD isometric view" loading="eager">
         <figcaption class="caption">CAD assembly for a micro air vehicle; avionics bay + sensor mounts.</figcaption>
       </figure>
       <div class="gallery" aria-label="Drone gallery">
         <img class="thumb" src="drones_build.png" alt="Prototype build">
         <img class="thumb" src="drones_line.png" alt="Prototype lineup">
       </div>
-      <h3 id="proj-drone">What I did</h3>
-      <p><strong>Controls &amp; integration:</strong> Implemented PD control with waypoint sequencing and telemetry tools for tuning. Designed the airframe and avionics stack in CAD, created LiDAR/IMU mounts, and routed a serviceable harness.</p>
-      <p><strong>Propulsion:</strong> Ran motor/prop/ESC trades; set thrust-to-weight and endurance margins; integrated power distribution and validated on the bench and in flight.</p>
+      <h3 id="proj-drone">Scope & Contributions</h3>
+      <p>A micro air vehicle with a modular avionics stack (flight computer, PDB, LiDAR, IMU) on a lightweight frame for rapid controls iteration and sensor experiments.</p>
+      <ul>
+        <li>PD loop tuning & waypoint sequencing; quick telemetry for gain checks.</li>
+        <li>Avionics bay/IMU/LiDAR mounting and clean harness routing in CAD.</li>
+        <li>Motor/prop/ESC comparisons and power distribution validation.</li>
+        <li>Bench bring-up and early flight checks.</li>
+      </ul>
       <ul class="tags">
         <li>SolidWorks</li><li>Teensy 4.0</li><li>LiDAR/IMU</li><li>C++ &amp; MATLAB</li><li>Propulsion sizing</li>
       </ul>
       <div class="btnrow">
-        <a class="btn primary" href="Autonomous_Drone_Report.pdf" target="_blank" rel="noopener">Project report (PDF)</a>
+        <a class="btn primary" href="Autonomous_Drone_report.pdf" target="_blank" rel="noopener">Project report (PDF)</a>
       </div>
     </article>
 
@@ -177,22 +206,19 @@
     <article class="card" aria-labelledby="proj-mayfly">
       <span class="ribbon">MAYFLY — Comet Sample Return</span>
       <figure>
-        <img src="mayfly_cad.png" alt="MAYFLY sample-return spacecraft CAD render" loading="eager">
+        <img class="heroimg" src="mayfly_cad.png" alt="MAYFLY sample-return spacecraft CAD render" loading="eager">
         <figcaption class="caption">Bus & payload concept used for mission trade studies.</figcaption>
       </figure>
-      <h3 id="proj-mayfly">Mission Concept & My Role</h3>
-      <p>
-        MAYFLY is a small-sat concept for returning a regolith sample from the active comet 311P/PANSTARRS.
-        I supported architecture trades and packaged the payload within a compact bus while keeping power,
-        mass, and interface constraints front-and-center. I also built quick scripts to sweep trajectories and
-        margins so the team could compare options rapidly in reviews.
-      </p>
-      <h4>Key contributions</h4>
+      <h3 id="proj-mayfly">Scope & Contributions</h3>
+      <p>Concept study to return a regolith sample from 311P/PANSTARRS with strict mass/power budgets and a compact bus/payload package.</p>
       <ul>
-        <li><strong>CAD &amp; packaging:</strong> Modeled the payload instrument bay and mechanical interfaces to the bus; tracked mass properties as the layout evolved.</li>
-        <li><strong>Propulsion trade support:</strong> Compared solar-electric vs. chemical stacks, linking power and tankage to timelines and sample-ops windows.</li>
-        <li><strong>Analysis tooling:</strong> Wrote scripts to sweep trajectory assumptions and power/mass margins; exported plots directly into design review decks.</li>
-        <li><strong>Integration notes:</strong> Flagged thermal and harnessing hot-spots early to inform panel cut-outs and payload connector strategy.</li>
+        <li>Helped package payload in CAD; defined interfaces and tracked mass properties.</li>
+        <li>Supported propulsion trades (SEP vs. chemical) tied to timelines/ops windows.</li>
+        <li>Built quick trajectory & margin sweep scripts and plots for reviews.</li>
+        <li>Flagged harness/thermal hot-spots to guide panel and connector choices.</li>
+      </ul>
+      <ul class="tags">
+        <li>Payload/bus CAD</li><li>Propulsion trades</li><li>Trajectory tools</li><li>Interfaces &amp; packaging</li><li>Review prep</li>
       </ul>
       <div class="btnrow">
         <a class="btn primary" href="Mayfly_Sample_Return_Report.pdf" target="_blank" rel="noopener">Mission report (PDF)</a>
@@ -248,7 +274,7 @@
   <p>© <span id="y"></span> Kyle Brown · <a href="mailto:Kylebrown978@yahoo.com">Email</a> · <a href="https://www.linkedin.com/in/kyle-v-brown">LinkedIn</a></p>
 </footer>
 <script>
-  document.getElementById('y').textContent=new Date().getFullYear()
+  document.getElementById('y').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
