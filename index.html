@@ -83,39 +83,6 @@
     font-weight:700;letter-spacing:.2px
   }
 
-  /* Project media-first layout */
-  .project-top{margin-bottom:18px}
-  figure{margin:0}
-  .heroimg{
-    margin:0 auto;
-    max-width:780px;
-    border:1px solid #203055;
-    box-shadow:0 8px 24px rgba(0,0,0,.25)
-  }
-  .caption{font-size:12px;color:#b8c4e3;margin-top:6px;text-align:center}
-
-  .gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:12px;
-    margin-top:16px
-  }
-  .gallery img.thumb{
-    aspect-ratio:4/3;
-    width:100%;
-    object-fit:cover;
-    border:1px solid #203055;
-    border-radius:10px
-  }
-
-  .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-  .btn{display:inline-block;padding:10px 14px;border:1px solid #2a355e;border-radius:10px;background:#0e1733;color:#e8ecff;text-decoration:none}
-  .btn.primary{border-color:#36b8ff;box-shadow:0 0 0 2px rgba(45,192,255,.16)}
-  .tags{list-style:none;margin:12px 0 0;padding:0;display:flex;gap:8px;flex-wrap:wrap}
-  .tags li{font-size:12px;padding:5px 9px;border:1px solid #2a355e;border-radius:999px;background:#0c1637;color:#cfe2ff}
-
-  .alt{background:var(--panel-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-
   /* ABOUT */
   .about{display:grid;grid-template-columns:280px 1fr;gap:28px;align-items:start}
   .headshot{
@@ -167,84 +134,6 @@
 
 <main>
 
-  <!-- PROJECTS (unchanged from your current file) -->
-  <section id="projects" class="wrap">
-    <h2>Featured Projects</h2>
-    <p class="muted">Detailed write-ups with visuals and links to full reports.</p>
-
-    <article class="card" aria-labelledby="proj-drone">
-      <span class="ribbon">Autonomous Drone (MAV)</span>
-      <div class="project-top">
-        <figure>
-          <img class="heroimg" src="drone_cad.png" alt="Autonomous Drone CAD isometric view">
-          <figcaption class="caption">CAD assembly for a micro air vehicle; avionics bay + sensor mounts.</figcaption>
-        </figure>
-        <div class="gallery">
-          <img class="thumb" src="drones_build.png" alt="Prototype build">
-          <img class="thumb" src="drones_line.png" alt="Prototype lineup">
-        </div>
-      </div>
-      <div>
-        <h3 id="proj-drone">Scope</h3>
-        <p>A micro air vehicle with a modular avionics stack (flight computer, PDB, LiDAR, IMU) on a lightweight frame for rapid controls iteration and sensor experiments.</p>
-        <h3>My contributions</h3>
-        <ul>
-          <li>PD loop tuning & waypoint sequencing; simple telemetry tools for quick gain checks.</li>
-          <li>Avionics bay/IMU/LiDAR mounting and clean harness routing.</li>
-          <li>Motor/prop/ESC comparisons and power distribution validation.</li>
-          <li>Bench bring-up and early flight checks.</li>
-        </ul>
-        <ul class="tags"><li>SolidWorks</li><li>Teensy 4.0</li><li>LiDAR/IMU</li><li>C++ &amp; MATLAB</li><li>Propulsion sizing</li></ul>
-        <div class="btnrow">
-          <a class="btn primary" href="Autonomous_Drone_report.pdf" target="_blank" rel="noopener">Project report (PDF)</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="card" aria-labelledby="proj-mayfly">
-      <span class="ribbon">MAYFLY — Comet Sample Return</span>
-      <div class="project-top">
-        <figure>
-          <img class="heroimg" src="mayfly_cad.png" alt="MAYFLY sample-return spacecraft CAD render">
-          <figcaption class="caption">Concept bus with sampling payload used for trade studies and design reviews.</figcaption>
-        </figure>
-      </div>
-      <div>
-        <h3 id="proj-mayfly">Scope</h3>
-        <p>Concept study to return a regolith sample from 311P/PANSTARRS under tight mass/power budgets, balancing packaging and propulsion choices with mission timelines.</p>
-        <h3>My contributions</h3>
-        <ul>
-          <li>Helped package payload within a compact bus; defined mechanical interfaces and tracked mass properties.</li>
-          <li>Supported propulsion trades (SEP vs. chemical) linking tankage/power to transfer time & ops windows.</li>
-          <li>Built quick trajectory & margin sweep scripts and plots for reviews.</li>
-          <li>Flagged harness/thermal hot-spots early to guide panel cut-outs and connector choices.</li>
-        </ul>
-        <ul class="tags"><li>Payload/bus CAD</li><li>Propulsion trades</li><li>Trajectory tools</li><li>Interfaces &amp; packaging</li><li>Review prep</li></ul>
-        <div class="btnrow">
-          <a class="btn primary" href="Mayfly_Sample_Return_Report.pdf" target="_blank" rel="noopener">Mission report (PDF)</a>
-        </div>
-      </div>
-    </article>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills" class="alt">
-    <div class="wrap">
-      <h2>Skills</h2>
-      <div class="card" style="background:transparent;border-color:#2a355e">
-        <div class="skillset">
-          <span class="skill">CAD: SolidWorks (assemblies, drawings, DFMA)</span>
-          <span class="skill">Controls: PD/PID, waypoint planning</span>
-          <span class="skill">Sensors: LiDAR/IMU fusion, telemetry</span>
-          <span class="skill">Coding: C++, MATLAB/Octave</span>
-          <span class="skill">Propulsion: sizing, power/ESC integration</span>
-          <span class="skill">Manufacturing: composites, 3D printing</span>
-          <span class="skill">AI/ML: data-driven analysis, basic model training</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ABOUT -->
   <section id="about" class="wrap">
     <h2>About</h2>
@@ -255,9 +144,11 @@
         <div class="avatar-initials" style="display:none;">KB</div>
       </div>
       <div>
-        <p>I’m an aerospace engineer who enjoys the full stack—designing hardware in CAD, making propulsion decisions with numbers, and writing the control software that ties everything together.</p>
-        <p>I also explore <strong>AI/ML</strong> for engineering work: using data-driven tools to find patterns, inform trades, and speed up analysis and design loops.</p>
-        <p>I like teams that iterate fast, document well, and ship working hardware. I’m exploring early-career roles where I can keep building flight systems and learn from experienced engineers.</p>
+        <p>Hello, I’m <strong>Kyle Brown</strong>. I studied aerospace engineering at UCLA after completing foundational coursework at Cañada College. What excites me most is working across the full stack of aerospace projects—starting from CAD concepts, making propulsion trades with real data, and then bringing those designs to life in the shop and in testing.</p>
+        <p>I’ve spent a lot of time building and refining UAV systems: laying out avionics bays in CAD, integrating sensors like LiDAR and IMUs, and tuning flight controllers until the hardware and software feel seamless together. I’m equally comfortable designing composite structures, routing harnesses, or debugging a C++ script that isn’t quite talking to the IMU the way it should.</p>
+        <p>My technical strengths include <strong>CAD (SolidWorks)</strong>, <strong>controls</strong>, <strong>propulsion sizing</strong>, and coding in <strong>C++ and MATLAB</strong>. More recently, I’ve been exploring <strong>AI/ML</strong> tools for engineering—using machine learning to spot patterns in test data, speed up analysis loops, and automate repetitive parts of trade studies.</p>
+        <p>Beyond the technical side, I bring a practical, hands-on approach. I like teams that move quickly, document clearly, and build things that actually fly. I’m detail-oriented, but I don’t get lost in perfectionism—I want to get hardware on the bench, learn from it, and iterate. That balance of precision and momentum is what motivates me as an engineer.</p>
+        <p>Outside of engineering, I’m the type of person who enjoys projects for fun—whether it’s fabricating a custom part, trying out new software tools, or digging into a research paper that sparks an idea. That curiosity keeps me learning and feeds back into my work in meaningful ways.</p>
         <div class="btnrow" style="margin-top:12px">
           <a class="btn" href="Kyle_Brown_Resume.pdf" target="_blank" rel="noopener">Download Résumé</a>
           <a class="btn" href="https://www.linkedin.com/in/kyle-v-brown">LinkedIn</a>
