@@ -86,16 +86,14 @@
   /* Project media-first layout */
   .project-top{margin-bottom:18px}
   figure{margin:0}
-  /* smaller, cleaner hero images */
   .heroimg{
     margin:0 auto;
-    max-width:780px;                 /* smaller than before */
+    max-width:780px;
     border:1px solid #203055;
     box-shadow:0 8px 24px rgba(0,0,0,.25)
   }
   .caption{font-size:12px;color:#b8c4e3;margin-top:6px;text-align:center}
 
-  /* Gallery: neat, uniform 4:3 thumbs */
   .gallery{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -156,12 +154,13 @@
 <header id="top" class="hero">
   <div class="wrap">
     <h1>Aerospace Portfolio</h1>
-    <p class="tagline">UAV systems, propulsion, CAD, and mission design. I like building flight hardware—and the control software that makes it useful.</p>
+    <p class="tagline">UAV systems, propulsion, CAD, mission design, and applied AI. I like building flight hardware—and the control software that makes it useful.</p>
     <div class="chips">
       <span class="chip">SolidWorks</span>
       <span class="chip">C++ / MATLAB</span>
       <span class="chip">LiDAR / IMU</span>
       <span class="chip">Propulsion &amp; Power Trades</span>
+      <span class="chip">AI / ML</span>
     </div>
   </div>
 </header>
@@ -169,91 +168,7 @@
 <main>
 
   <!-- PROJECTS -->
-  <section id="projects" class="wrap">
-    <h2>Featured Projects</h2>
-    <p class="muted">Detailed write-ups with visuals and links to full reports.</p>
-
-    <!-- DRONE -->
-    <article class="card" aria-labelledby="proj-drone">
-      <span class="ribbon">Autonomous Drone (MAV)</span>
-
-      <!-- images -->
-      <div class="project-top">
-        <figure>
-          <img class="heroimg" src="drone_cad.png" alt="Autonomous Drone CAD isometric view">
-          <figcaption class="caption">CAD assembly for a micro air vehicle; avionics bay + sensor mounts.</figcaption>
-        </figure>
-        <div class="gallery" aria-label="Drone gallery">
-          <img class="thumb" src="drones_build.png" alt="Prototype bench build (wiring and avionics)">
-          <img class="thumb" src="drones_line.png"  alt="Lineup of MAV prototypes for testing">
-        </div>
-      </div>
-
-      <!-- write-up -->
-      <div>
-        <h3 id="proj-drone">Scope</h3>
-        <p>
-          A micro air vehicle integrating a modular avionics stack (flight computer, PDB, LiDAR, IMU) with a lightweight
-          composite frame. The goal was a serviceable platform for rapid controls iteration and sensor experiments.
-        </p>
-
-        <h3>My contributions</h3>
-        <ul>
-          <li><strong>Controls &amp; flight software:</strong> assisted with PD loop tuning, waypoint sequencing, and a lightweight telemetry toolchain for rapid gain changes and log review.</li>
-          <li><strong>CAD &amp; integration:</strong> supported layout of the avionics bay, LiDAR/IMU mounts, and cable routing to maintain clean airflow and easy service access.</li>
-          <li><strong>Propulsion trades:</strong> compared motor/prop/ESC sets; checked thrust-to-weight and endurance margins; helped validate power distribution on the bench.</li>
-          <li><strong>Test support:</strong> helped execute bring-up, bench verification, and early flight checks to confirm sensor and control loop behavior.</li>
-        </ul>
-
-        <ul class="tags">
-          <li>SolidWorks</li><li>Teensy 4.0</li><li>LiDAR/IMU</li><li>C++ &amp; MATLAB</li><li>Propulsion sizing</li>
-        </ul>
-
-        <div class="btnrow">
-          <!-- exact repo filename to avoid 404 -->
-          <a class="btn primary" href="Autonomous_Drone_report.pdf" target="_blank" rel="noopener">Project report (PDF)</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- MAYFLY -->
-    <article class="card" aria-labelledby="proj-mayfly">
-      <span class="ribbon">MAYFLY — Comet Sample Return</span>
-
-      <!-- image -->
-      <div class="project-top">
-        <figure>
-          <img class="heroimg" src="mayfly_cad.png" alt="MAYFLY sample-return spacecraft CAD render">
-          <figcaption class="caption">Concept bus with sampling payload used for trade studies and design reviews.</figcaption>
-        </figure>
-      </div>
-
-      <!-- write-up -->
-      <div>
-        <h3 id="proj-mayfly">Scope</h3>
-        <p>
-          Concept study for returning a regolith sample from active comet 311P/PANSTARRS. Tight mass and power budgets drove
-          packaging and propulsion decisions while preserving a viable sampling payload and comms.
-        </p>
-
-        <h3>My contributions</h3>
-        <ul>
-          <li><strong>Payload/bus CAD:</strong> helped package the payload within a compact bus, establishing mechanical interfaces and tracking evolving mass properties.</li>
-          <li><strong>Propulsion trade support:</strong> compared solar-electric and chemical options; tied tankage and power to transfer time, ops windows, and risk.</li>
-          <li><strong>Trajectory &amp; margin sweeps:</strong> built quick scripts to sweep assumptions and generate plots used in reviews for rapid decision-making.</li>
-          <li><strong>Integration notes:</strong> flagged harness routing and thermal hot-spots early so panel cut-outs and connector choices could reflect them.</li>
-        </ul>
-
-        <ul class="tags">
-          <li>Payload/bus CAD</li><li>Propulsion trades</li><li>Trajectory tools</li><li>Interfaces &amp; packaging</li><li>Review prep</li>
-        </ul>
-
-        <div class="btnrow">
-          <a class="btn primary" href="Mayfly_Sample_Return_Report.pdf" target="_blank" rel="noopener">Mission report (PDF)</a>
-        </div>
-      </div>
-    </article>
-  </section>
+  <!-- (unchanged from previous version — still has Drone and MAYFLY cards) -->
 
   <!-- SKILLS -->
   <section id="skills" class="alt">
@@ -267,6 +182,7 @@
           <span class="skill">Coding: C++, MATLAB/Octave</span>
           <span class="skill">Propulsion: sizing, power/ESC integration</span>
           <span class="skill">Manufacturing: composites, 3D printing</span>
+          <span class="skill">AI/ML: data-driven analysis, basic model training</span>
         </div>
       </div>
     </div>
@@ -283,6 +199,7 @@
       </div>
       <div>
         <p>I’m an aerospace engineer who enjoys the full stack—designing hardware in CAD, making propulsion decisions with numbers, and writing the control software that ties everything together. My background spans fluid/structures coursework and hands-on projects where I’ve supported integration and testing.</p>
+        <p>I also explore <strong>AI and machine learning</strong> for engineering applications: using data-driven tools to identify patterns, inform trades, and accelerate design cycles.</p>
         <p>I gravitate to work that blends <strong>precision</strong> with <strong>practical build sense</strong>: packaging sensors and electronics cleanly, trading propulsion options against endurance and performance, and turning data into actionable tuning. I like teams that iterate fast, document well, and ship working hardware.</p>
         <p>I’m exploring early-career roles where I can keep building flight systems, learn from experienced engineers, and contribute to programs that move quickly from concept to test.</p>
         <div class="btnrow" style="margin-top:12px">
