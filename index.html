@@ -74,7 +74,7 @@
   .card{
     background:var(--panel);border:1px solid var(--border);
     border-radius:14px;padding:22px;box-shadow:var(--shadow);
-    margin-bottom:28px;
+    margin-bottom:32px;
   }
   .card .ribbon{
     display:inline-block;margin:-22px 0 14px -22px;padding:8px 14px 8px 18px;
@@ -83,38 +83,19 @@
     font-weight:700;letter-spacing:.2px
   }
 
-  /* PROJECT CARDS: media top, text bottom */
-  .two{display:grid;grid-template-columns:1fr;gap:18px}
-
-  /* Figure polish */
+  /* Projects media-first layout */
+  .project-top{margin-bottom:18px}
   figure{margin:0}
-  .heroimg{
-    max-width:1100px;        /* consistent large image width */
-    margin:0 auto;           /* center inside card */
-    border:1px solid #203055;
-    box-shadow:0 10px 28px rgba(0,0,0,.25);
-  }
-  .caption{font-size:12px;color:#b8c4e3;margin:8px auto 0;max-width:1100px;padding:0 2px}
+  .heroimg{margin:0 auto;max-width:950px;border:1px solid #203055;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+  .caption{font-size:12px;color:#b8c4e3;margin-top:6px;text-align:center}
 
-  /* Gallery: responsive, uniform 4:3 thumbs */
-  .gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:12px;
-    margin-top:14px
-  }
-  .gallery img.thumb{
-    aspect-ratio:4/3;
-    width:100%;
-    object-fit:cover;
-    border-radius:10px;
-    border:1px solid #203055;
-  }
+  .gallery{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:16px}
+  .gallery img.thumb{flex:1 1 300px;max-width:450px;aspect-ratio:4/3;object-fit:cover;border:1px solid #203055;border-radius:10px}
 
-  .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
   .btn{display:inline-block;padding:10px 14px;border:1px solid #2a355e;border-radius:10px;background:#0e1733;color:#e8ecff;text-decoration:none}
   .btn.primary{border-color:#36b8ff;box-shadow:0 0 0 2px rgba(45,192,255,.16)}
-  .tags{list-style:none;margin:10px 0 0;padding:0;display:flex;gap:8px;flex-wrap:wrap}
+  .tags{list-style:none;margin:12px 0 0;padding:0;display:flex;gap:8px;flex-wrap:wrap}
   .tags li{font-size:12px;padding:5px 9px;border:1px solid #2a355e;border-radius:999px;background:#0c1637;color:#cfe2ff}
 
   .alt{background:var(--panel-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
@@ -175,10 +156,9 @@
     <p class="muted">Detailed write-ups with visuals and links to full reports.</p>
 
     <!-- DRONE -->
-    <article class="card two" aria-labelledby="proj-drone">
-      <!-- media (top) -->
-      <div>
-        <span class="ribbon">Autonomous Drone (MAV)</span>
+    <article class="card" aria-labelledby="proj-drone">
+      <span class="ribbon">Autonomous Drone (MAV)</span>
+      <div class="project-top">
         <figure>
           <img class="heroimg" src="drone_cad.png" alt="Autonomous Drone CAD isometric view" loading="eager">
           <figcaption class="caption">CAD assembly for a micro air vehicle; avionics bay + sensor mounts.</figcaption>
@@ -188,43 +168,43 @@
           <img class="thumb" src="drones_line.png"  alt="Prototype lineup" loading="lazy">
         </div>
       </div>
-      <!-- text (bottom) -->
       <div>
         <h3 id="proj-drone">Contributions</h3>
-        <p>Assisted with PD control implementation, waypoint sequencing, and telemetry tooling. Supported airframe and avionics CAD, LiDAR/IMU mounting, and harness routing. Helped with propulsion trades (motor/prop/ESC) and hardware bring-up on the bench and in flight.</p>
+        <p>This micro air vehicle project combined airframe design, sensor integration, and flight software into a compact package. The team developed a modular avionics stack where components like the flight computer, LiDAR, and IMU could be swapped and serviced quickly.</p>
+        <p>I assisted with control system tuning—implementing proportional-derivative loops, building telemetry tools, and testing waypoint sequencing. On the hardware side, I contributed to CAD layout of the avionics bay, LiDAR/IMU mounts, and power harness routing to keep the system clean and serviceable.</p>
+        <p>On propulsion, I supported trades between different motor/prop/ESC configurations, validated thrust-to-weight ratios, and helped with endurance margin checks. These efforts fed into bench testing and early flights of the prototype vehicles.</p>
         <ul class="tags">
           <li>SolidWorks</li><li>Teensy 4.0</li><li>LiDAR/IMU</li><li>C++ &amp; MATLAB</li><li>Propulsion sizing</li>
         </ul>
         <div class="btnrow">
-          <!-- exact filename matches repo -->
-          <a class="btn primary" href="Autonomous_Drone_report.pdf?v=3" target="_blank" rel="noopener">Project report (PDF)</a>
+          <a class="btn primary" href="Autonomous_Drone_report.pdf" target="_blank" rel="noopener">Project report (PDF)</a>
         </div>
       </div>
     </article>
 
     <!-- MAYFLY -->
-    <article class="card two" aria-labelledby="proj-mayfly">
-      <!-- media (top) -->
-      <div>
-        <span class="ribbon">MAYFLY — Comet Sample Return</span>
+    <article class="card" aria-labelledby="proj-mayfly">
+      <span class="ribbon">MAYFLY — Comet Sample Return</span>
+      <div class="project-top">
         <figure>
           <img class="heroimg" src="mayfly_cad.png" alt="MAYFLY sample-return spacecraft CAD render" loading="eager">
           <figcaption class="caption">Bus &amp; payload concept used for mission trade studies.</figcaption>
         </figure>
       </div>
-      <!-- text (bottom) -->
       <div>
         <h3 id="proj-mayfly">Contributions</h3>
-        <p>Supported architecture trades, payload packaging, and interface constraints. Helped compare propulsion options (solar-electric vs. chemical) with quick trajectory and margin sweeps to inform reviews. Flagged early integration concerns (thermal, harnessing) for panel and connector decisions.</p>
+        <p>The MAYFLY concept explored a small spacecraft to return regolith from an active comet. The mission involved strict mass and power budgets while still carrying a sampling payload capable of operating in a harsh environment.</p>
+        <p>I worked on CAD packaging of the payload bay, helping to ensure the science instruments fit within a compact bus. I also supported propulsion trades, comparing solar-electric vs. chemical options, and tying those to trajectory opportunities and mission timelines.</p>
+        <p>In addition, I helped write scripts for trajectory sweeps and power/mass margin checks, which gave the team quick-look trade plots for reviews. During integration discussions, I highlighted potential hot spots for harnessing and thermal paths so they could be considered early in the design.</p>
         <ul class="tags">
           <li>Payload/bus CAD</li>
           <li>Propulsion trade support</li>
           <li>Trajectory &amp; margin sweeps</li>
           <li>Interfaces &amp; packaging</li>
-          <li>Review prep</li>
+          <li>Design reviews</li>
         </ul>
         <div class="btnrow">
-          <a class="btn primary" href="Mayfly_Sample_Return_Report.pdf?v=2" target="_blank" rel="noopener">Mission report (PDF)</a>
+          <a class="btn primary" href="Mayfly_Sample_Return_Report.pdf" target="_blank" rel="noopener">Mission report (PDF)</a>
         </div>
       </div>
     </article>
@@ -274,8 +254,6 @@
 <footer>
   <p>© <span id="y"></span> Kyle Brown · <a href="mailto:Kylebrown978@yahoo.com">Email</a> · <a href="https://www.linkedin.com/in/kyle-v-brown">LinkedIn</a></p>
 </footer>
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
