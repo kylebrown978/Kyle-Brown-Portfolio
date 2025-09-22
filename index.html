@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Kyle Brown — Aerospace Portfolio</title>
-<meta name="description" content="UAV systems, propulsion, CAD design, and mission design." />
+<meta name="description" content="UAV systems, propulsion, CAD design, mission design, and applied AI." />
 <style>
   :root{
     --max: 100rem;
@@ -167,8 +167,65 @@
 
 <main>
 
-  <!-- PROJECTS -->
-  <!-- (unchanged from previous version — still has Drone and MAYFLY cards) -->
+  <!-- PROJECTS (unchanged from your current file) -->
+  <section id="projects" class="wrap">
+    <h2>Featured Projects</h2>
+    <p class="muted">Detailed write-ups with visuals and links to full reports.</p>
+
+    <article class="card" aria-labelledby="proj-drone">
+      <span class="ribbon">Autonomous Drone (MAV)</span>
+      <div class="project-top">
+        <figure>
+          <img class="heroimg" src="drone_cad.png" alt="Autonomous Drone CAD isometric view">
+          <figcaption class="caption">CAD assembly for a micro air vehicle; avionics bay + sensor mounts.</figcaption>
+        </figure>
+        <div class="gallery">
+          <img class="thumb" src="drones_build.png" alt="Prototype build">
+          <img class="thumb" src="drones_line.png" alt="Prototype lineup">
+        </div>
+      </div>
+      <div>
+        <h3 id="proj-drone">Scope</h3>
+        <p>A micro air vehicle with a modular avionics stack (flight computer, PDB, LiDAR, IMU) on a lightweight frame for rapid controls iteration and sensor experiments.</p>
+        <h3>My contributions</h3>
+        <ul>
+          <li>PD loop tuning & waypoint sequencing; simple telemetry tools for quick gain checks.</li>
+          <li>Avionics bay/IMU/LiDAR mounting and clean harness routing.</li>
+          <li>Motor/prop/ESC comparisons and power distribution validation.</li>
+          <li>Bench bring-up and early flight checks.</li>
+        </ul>
+        <ul class="tags"><li>SolidWorks</li><li>Teensy 4.0</li><li>LiDAR/IMU</li><li>C++ &amp; MATLAB</li><li>Propulsion sizing</li></ul>
+        <div class="btnrow">
+          <a class="btn primary" href="Autonomous_Drone_report.pdf" target="_blank" rel="noopener">Project report (PDF)</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" aria-labelledby="proj-mayfly">
+      <span class="ribbon">MAYFLY — Comet Sample Return</span>
+      <div class="project-top">
+        <figure>
+          <img class="heroimg" src="mayfly_cad.png" alt="MAYFLY sample-return spacecraft CAD render">
+          <figcaption class="caption">Concept bus with sampling payload used for trade studies and design reviews.</figcaption>
+        </figure>
+      </div>
+      <div>
+        <h3 id="proj-mayfly">Scope</h3>
+        <p>Concept study to return a regolith sample from 311P/PANSTARRS under tight mass/power budgets, balancing packaging and propulsion choices with mission timelines.</p>
+        <h3>My contributions</h3>
+        <ul>
+          <li>Helped package payload within a compact bus; defined mechanical interfaces and tracked mass properties.</li>
+          <li>Supported propulsion trades (SEP vs. chemical) linking tankage/power to transfer time & ops windows.</li>
+          <li>Built quick trajectory & margin sweep scripts and plots for reviews.</li>
+          <li>Flagged harness/thermal hot-spots early to guide panel cut-outs and connector choices.</li>
+        </ul>
+        <ul class="tags"><li>Payload/bus CAD</li><li>Propulsion trades</li><li>Trajectory tools</li><li>Interfaces &amp; packaging</li><li>Review prep</li></ul>
+        <div class="btnrow">
+          <a class="btn primary" href="Mayfly_Sample_Return_Report.pdf" target="_blank" rel="noopener">Mission report (PDF)</a>
+        </div>
+      </div>
+    </article>
+  </section>
 
   <!-- SKILLS -->
   <section id="skills" class="alt">
@@ -198,10 +255,9 @@
         <div class="avatar-initials" style="display:none;">KB</div>
       </div>
       <div>
-        <p>I’m an aerospace engineer who enjoys the full stack—designing hardware in CAD, making propulsion decisions with numbers, and writing the control software that ties everything together. My background spans fluid/structures coursework and hands-on projects where I’ve supported integration and testing.</p>
-        <p>I also explore <strong>AI and machine learning</strong> for engineering applications: using data-driven tools to identify patterns, inform trades, and accelerate design cycles.</p>
-        <p>I gravitate to work that blends <strong>precision</strong> with <strong>practical build sense</strong>: packaging sensors and electronics cleanly, trading propulsion options against endurance and performance, and turning data into actionable tuning. I like teams that iterate fast, document well, and ship working hardware.</p>
-        <p>I’m exploring early-career roles where I can keep building flight systems, learn from experienced engineers, and contribute to programs that move quickly from concept to test.</p>
+        <p>I’m an aerospace engineer who enjoys the full stack—designing hardware in CAD, making propulsion decisions with numbers, and writing the control software that ties everything together.</p>
+        <p>I also explore <strong>AI/ML</strong> for engineering work: using data-driven tools to find patterns, inform trades, and speed up analysis and design loops.</p>
+        <p>I like teams that iterate fast, document well, and ship working hardware. I’m exploring early-career roles where I can keep building flight systems and learn from experienced engineers.</p>
         <div class="btnrow" style="margin-top:12px">
           <a class="btn" href="Kyle_Brown_Resume.pdf" target="_blank" rel="noopener">Download Résumé</a>
           <a class="btn" href="https://www.linkedin.com/in/kyle-v-brown">LinkedIn</a>
