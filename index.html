@@ -73,7 +73,8 @@
 
   .card{
     background:var(--panel);border:1px solid var(--border);
-    border-radius:14px;padding:22px;box-shadow:var(--shadow)
+    border-radius:14px;padding:22px;box-shadow:var(--shadow);
+    margin-bottom:28px;
   }
   .card .ribbon{
     display:inline-block;margin:-22px 0 14px -22px;padding:8px 14px 8px 18px;
@@ -85,21 +86,33 @@
   /* PROJECT CARDS: stack media top, text bottom */
   .two{
     display:grid;
-    grid-template-columns:1fr;   /* <- single column */
+    grid-template-columns:1fr;
     gap:18px;
   }
 
+  /* Figure sizing + polish */
+  figure{margin:0}
+  .heroimg{
+    max-width: 1100px;
+    margin: 0 auto;
+    border:1px solid #203055;
+    box-shadow: 0 10px 28px rgba(0,0,0,.25);
+  }
+  .caption{font-size:12px;color:#b8c4e3;margin:8px auto 0;max-width:1100px;padding:0 2px}
+
+  /* Gallery: clean, responsive, uniform thumbs */
   .gallery{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:10px;
-    margin-top:12px
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:12px;
+    margin-top:14px
   }
   .gallery img.thumb{
     aspect-ratio:4/3;
     width:100%;
     object-fit:cover;
     border-radius:10px;
+    border:1px solid #203055;
   }
 
   .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
@@ -107,7 +120,6 @@
   .btn.primary{border-color:#36b8ff;box-shadow:0 0 0 2px rgba(45,192,255,.16)}
   .tags{list-style:none;margin:10px 0 0;padding:0;display:flex;gap:8px;flex-wrap:wrap}
   .tags li{font-size:12px;padding:5px 9px;border:1px solid #2a355e;border-radius:999px;background:#0c1637;color:#cfe2ff}
-  .caption{font-size:12px;color:#b8c4e3;margin-top:6px}
 
   .alt{background:var(--panel-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 
@@ -174,12 +186,12 @@
       <div>
         <span class="ribbon">Autonomous Drone (MAV)</span>
         <figure>
-          <img src="drone_cad.png" alt="Autonomous Drone CAD isometric view" loading="eager">
+          <img class="heroimg" src="drone_cad.png" alt="Autonomous Drone CAD isometric view" loading="eager">
           <figcaption class="caption">CAD assembly for a micro air vehicle; avionics bay + sensor mounts.</figcaption>
         </figure>
         <div class="gallery" aria-label="Drone gallery">
-          <img class="thumb" src="drones_build.png" alt="Prototype build">
-          <img class="thumb" src="drones_line.png"  alt="Prototype lineup">
+          <img class="thumb" src="drones_build.png" alt="Prototype build" loading="lazy">
+          <img class="thumb" src="drones_line.png"  alt="Prototype lineup" loading="lazy">
         </div>
       </div>
       <!-- text (bottom) -->
@@ -191,24 +203,25 @@
           <li>SolidWorks</li><li>Teensy 4.0</li><li>LiDAR/IMU</li><li>C++ &amp; MATLAB</li><li>Propulsion sizing</li>
         </ul>
         <div class="btnrow">
-          <a class="btn primary" href="Autonomous_Drone_Report.pdf?v=2" target="_blank" rel="noopener">Project report (PDF)</a>
+          <!-- FIXED filename case -->
+          <a class="btn primary" href="Autonomous_Drone_report.pdf?v=3" target="_blank" rel="noopener">Project report (PDF)</a>
         </div>
       </div>
     </article>
 
     <!-- MAYFLY -->
-    <article class="card two" aria-labelledby="proj-mayfly" style="margin-top:28px">
+    <article class="card two" aria-labelledby="proj-mayfly">
       <!-- media (top) -->
       <div>
         <span class="ribbon">MAYFLY — Comet Sample Return</span>
         <figure>
-          <img src="mayfly_cad.png" alt="MAYFLY sample-return spacecraft CAD render" loading="eager">
-          <figcaption class="caption">Bus & payload concept used for mission trade studies.</figcaption>
+          <img class="heroimg" src="mayfly_cad.png" alt="MAYFLY sample-return spacecraft CAD render" loading="eager">
+          <figcaption class="caption">Bus &amp; payload concept used for mission trade studies.</figcaption>
         </figure>
       </div>
       <!-- text (bottom) -->
       <div>
-        <h3 id="proj-mayfly">Mission Concept & My Role</h3>
+        <h3 id="proj-mayfly">Mission Concept &amp; My Role</h3>
         <p>
           MAYFLY is a small-sat concept for returning a regolith sample from the active comet 311P/PANSTARRS.
           I supported architecture trades and packaged the payload within a compact bus while keeping power,
