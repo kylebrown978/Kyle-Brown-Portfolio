@@ -83,24 +83,20 @@
     font-weight:700;letter-spacing:.2px
   }
 
-  /* PROJECT CARDS: stack media top, text bottom */
-  .two{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:18px;
-  }
+  /* PROJECT CARDS: media top, text bottom */
+  .two{display:grid;grid-template-columns:1fr;gap:18px}
 
-  /* Figure sizing + polish */
+  /* Figure polish */
   figure{margin:0}
   .heroimg{
-    max-width: 1100px;
-    margin: 0 auto;
+    max-width:1100px;        /* consistent large image width */
+    margin:0 auto;           /* center inside card */
     border:1px solid #203055;
-    box-shadow: 0 10px 28px rgba(0,0,0,.25);
+    box-shadow:0 10px 28px rgba(0,0,0,.25);
   }
   .caption{font-size:12px;color:#b8c4e3;margin:8px auto 0;max-width:1100px;padding:0 2px}
 
-  /* Gallery: clean, responsive, uniform thumbs */
+  /* Gallery: responsive, uniform 4:3 thumbs */
   .gallery{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -138,9 +134,7 @@
 
   footer{border-top:1px solid var(--border);padding:var(--pad);text-align:center;color:#b8c4e3}
 
-  @media (max-width:860px){
-    .about{grid-template-columns:1fr}
-  }
+  @media (max-width:860px){.about{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -196,14 +190,13 @@
       </div>
       <!-- text (bottom) -->
       <div>
-        <h3 id="proj-drone">What I did</h3>
-        <p><strong>Controls &amp; integration:</strong> Implemented PD control with waypoint sequencing and telemetry tools for tuning. Designed the airframe and avionics stack in CAD, created LiDAR/IMU mounts, and routed a serviceable harness.</p>
-        <p><strong>Propulsion:</strong> Ran motor/prop/ESC trades; set thrust-to-weight and endurance margins; integrated power distribution and validated on the bench and in flight.</p>
+        <h3 id="proj-drone">Contributions</h3>
+        <p>Assisted with PD control implementation, waypoint sequencing, and telemetry tooling. Supported airframe and avionics CAD, LiDAR/IMU mounting, and harness routing. Helped with propulsion trades (motor/prop/ESC) and hardware bring-up on the bench and in flight.</p>
         <ul class="tags">
           <li>SolidWorks</li><li>Teensy 4.0</li><li>LiDAR/IMU</li><li>C++ &amp; MATLAB</li><li>Propulsion sizing</li>
         </ul>
         <div class="btnrow">
-          <!-- FIXED filename case -->
+          <!-- exact filename matches repo -->
           <a class="btn primary" href="Autonomous_Drone_report.pdf?v=3" target="_blank" rel="noopener">Project report (PDF)</a>
         </div>
       </div>
@@ -221,31 +214,15 @@
       </div>
       <!-- text (bottom) -->
       <div>
-        <h3 id="proj-mayfly">Mission Concept &amp; My Role</h3>
-        <p>
-          MAYFLY is a small-sat concept for returning a regolith sample from the active comet 311P/PANSTARRS.
-          I supported architecture trades and packaged the payload within a compact bus while keeping power,
-          mass, and interface constraints front-and-center. I also built quick scripts to sweep trajectories and
-          margins so the team could compare options rapidly in reviews.
-        </p>
-
-        <h4>What I owned</h4>
+        <h3 id="proj-mayfly">Contributions</h3>
+        <p>Supported architecture trades, payload packaging, and interface constraints. Helped compare propulsion options (solar-electric vs. chemical) with quick trajectory and margin sweeps to inform reviews. Flagged early integration concerns (thermal, harnessing) for panel and connector decisions.</p>
         <ul class="tags">
           <li>Payload/bus CAD</li>
-          <li>Propulsion trades (SEP vs. chemical)</li>
+          <li>Propulsion trade support</li>
           <li>Trajectory &amp; margin sweeps</li>
           <li>Interfaces &amp; packaging</li>
           <li>Review prep</li>
         </ul>
-
-        <h4>Key contributions</h4>
-        <ul>
-          <li><strong>CAD &amp; packaging:</strong> Modeled the payload instrument bay and mechanical interfaces to the bus; tracked mass properties as the layout evolved.</li>
-          <li><strong>Propulsion trade support:</strong> Compared solar-electric vs. chemical stacks, linking power and tankage to timelines and sample-ops windows.</li>
-          <li><strong>Analysis tooling:</strong> Wrote scripts to sweep trajectory assumptions and power/mass margins; exported plots directly into design review decks.</li>
-          <li><strong>Integration notes:</strong> Flagged thermal and harnessing hot-spots early to inform panel cut-outs and payload connector strategy.</li>
-        </ul>
-
         <div class="btnrow">
           <a class="btn primary" href="Mayfly_Sample_Return_Report.pdf?v=2" target="_blank" rel="noopener">Mission report (PDF)</a>
         </div>
@@ -280,9 +257,9 @@
         <div class="avatar-initials" style="display:none;">KB</div>
       </div>
       <div>
-        <p>I’m an aerospace engineer who enjoys the full stack—designing hardware in CAD, making propulsion decisions with numbers, and writing the control software that ties everything together. My background spans fluid/structures coursework and hands-on projects where I’ve owned integration and testing.</p>
+        <p>I’m an aerospace engineer who enjoys the full stack—designing hardware in CAD, making propulsion decisions with numbers, and writing the control software that ties everything together. My background spans fluid/structures coursework and hands-on projects where I’ve supported integration and testing.</p>
         <p>I gravitate to work that blends <strong>precision</strong> with <strong>practical build sense</strong>: packaging sensors and electronics cleanly, trading propulsion options against endurance and performance, and turning data into actionable tuning. I like teams that iterate fast, document well, and ship working hardware.</p>
-        <p>Right now I’m looking for early-career roles where I can keep building flight systems, learn from experienced engineers, and contribute to programs that move quickly from concept to test.</p>
+        <p>I’m exploring early-career roles where I can keep building flight systems, learn from experienced engineers, and contribute to programs that move quickly from concept to test.</p>
         <div class="btnrow" style="margin-top:12px">
           <a class="btn" href="Kyle_Brown_Resume.pdf" target="_blank" rel="noopener">Download Résumé</a>
           <a class="btn" href="https://www.linkedin.com/in/kyle-v-brown">LinkedIn</a>
