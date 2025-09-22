@@ -12,7 +12,7 @@
     --radius: 14px;
 
     --ink:#0e1116;
-    --muted:#7a8599;
+    --muted:#8ba0c7;
     --bg:#0b1020;
     --panel:#11172b;
     --panel-2:#0f1526;
@@ -83,14 +83,32 @@
     font-weight:700;letter-spacing:.2px
   }
 
-  /* Projects media-first layout */
+  /* Project media-first layout */
   .project-top{margin-bottom:18px}
   figure{margin:0}
-  .heroimg{margin:0 auto;max-width:950px;border:1px solid #203055;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+  /* smaller, cleaner hero images */
+  .heroimg{
+    margin:0 auto;
+    max-width:780px;                 /* smaller than before */
+    border:1px solid #203055;
+    box-shadow:0 8px 24px rgba(0,0,0,.25)
+  }
   .caption{font-size:12px;color:#b8c4e3;margin-top:6px;text-align:center}
 
-  .gallery{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:16px}
-  .gallery img.thumb{flex:1 1 300px;max-width:450px;aspect-ratio:4/3;object-fit:cover;border:1px solid #203055;border-radius:10px}
+  /* Gallery: neat, uniform 4:3 thumbs */
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:12px;
+    margin-top:16px
+  }
+  .gallery img.thumb{
+    aspect-ratio:4/3;
+    width:100%;
+    object-fit:cover;
+    border:1px solid #203055;
+    border-radius:10px
+  }
 
   .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
   .btn{display:inline-block;padding:10px 14px;border:1px solid #2a355e;border-radius:10px;background:#0e1733;color:#e8ecff;text-decoration:none}
@@ -158,25 +176,41 @@
     <!-- DRONE -->
     <article class="card" aria-labelledby="proj-drone">
       <span class="ribbon">Autonomous Drone (MAV)</span>
+
+      <!-- images -->
       <div class="project-top">
         <figure>
-          <img class="heroimg" src="drone_cad.png" alt="Autonomous Drone CAD isometric view" loading="eager">
+          <img class="heroimg" src="drone_cad.png" alt="Autonomous Drone CAD isometric view">
           <figcaption class="caption">CAD assembly for a micro air vehicle; avionics bay + sensor mounts.</figcaption>
         </figure>
         <div class="gallery" aria-label="Drone gallery">
-          <img class="thumb" src="drones_build.png" alt="Prototype build" loading="lazy">
-          <img class="thumb" src="drones_line.png"  alt="Prototype lineup" loading="lazy">
+          <img class="thumb" src="drones_build.png" alt="Prototype bench build (wiring and avionics)">
+          <img class="thumb" src="drones_line.png"  alt="Lineup of MAV prototypes for testing">
         </div>
       </div>
+
+      <!-- write-up -->
       <div>
-        <h3 id="proj-drone">Contributions</h3>
-        <p>This micro air vehicle project combined airframe design, sensor integration, and flight software into a compact package. The team developed a modular avionics stack where components like the flight computer, LiDAR, and IMU could be swapped and serviced quickly.</p>
-        <p>I assisted with control system tuning—implementing proportional-derivative loops, building telemetry tools, and testing waypoint sequencing. On the hardware side, I contributed to CAD layout of the avionics bay, LiDAR/IMU mounts, and power harness routing to keep the system clean and serviceable.</p>
-        <p>On propulsion, I supported trades between different motor/prop/ESC configurations, validated thrust-to-weight ratios, and helped with endurance margin checks. These efforts fed into bench testing and early flights of the prototype vehicles.</p>
+        <h3 id="proj-drone">Scope</h3>
+        <p>
+          A micro air vehicle integrating a modular avionics stack (flight computer, PDB, LiDAR, IMU) with a lightweight
+          composite frame. The goal was a serviceable platform for rapid controls iteration and sensor experiments.
+        </p>
+
+        <h3>My contributions</h3>
+        <ul>
+          <li><strong>Controls &amp; flight software:</strong> assisted with PD loop tuning, waypoint sequencing, and a lightweight telemetry toolchain for rapid gain changes and log review.</li>
+          <li><strong>CAD &amp; integration:</strong> supported layout of the avionics bay, LiDAR/IMU mounts, and cable routing to maintain clean airflow and easy service access.</li>
+          <li><strong>Propulsion trades:</strong> compared motor/prop/ESC sets; checked thrust-to-weight and endurance margins; helped validate power distribution on the bench.</li>
+          <li><strong>Test support:</strong> helped execute bring-up, bench verification, and early flight checks to confirm sensor and control loop behavior.</li>
+        </ul>
+
         <ul class="tags">
           <li>SolidWorks</li><li>Teensy 4.0</li><li>LiDAR/IMU</li><li>C++ &amp; MATLAB</li><li>Propulsion sizing</li>
         </ul>
+
         <div class="btnrow">
+          <!-- exact repo filename to avoid 404 -->
           <a class="btn primary" href="Autonomous_Drone_report.pdf" target="_blank" rel="noopener">Project report (PDF)</a>
         </div>
       </div>
@@ -185,24 +219,35 @@
     <!-- MAYFLY -->
     <article class="card" aria-labelledby="proj-mayfly">
       <span class="ribbon">MAYFLY — Comet Sample Return</span>
+
+      <!-- image -->
       <div class="project-top">
         <figure>
-          <img class="heroimg" src="mayfly_cad.png" alt="MAYFLY sample-return spacecraft CAD render" loading="eager">
-          <figcaption class="caption">Bus &amp; payload concept used for mission trade studies.</figcaption>
+          <img class="heroimg" src="mayfly_cad.png" alt="MAYFLY sample-return spacecraft CAD render">
+          <figcaption class="caption">Concept bus with sampling payload used for trade studies and design reviews.</figcaption>
         </figure>
       </div>
+
+      <!-- write-up -->
       <div>
-        <h3 id="proj-mayfly">Contributions</h3>
-        <p>The MAYFLY concept explored a small spacecraft to return regolith from an active comet. The mission involved strict mass and power budgets while still carrying a sampling payload capable of operating in a harsh environment.</p>
-        <p>I worked on CAD packaging of the payload bay, helping to ensure the science instruments fit within a compact bus. I also supported propulsion trades, comparing solar-electric vs. chemical options, and tying those to trajectory opportunities and mission timelines.</p>
-        <p>In addition, I helped write scripts for trajectory sweeps and power/mass margin checks, which gave the team quick-look trade plots for reviews. During integration discussions, I highlighted potential hot spots for harnessing and thermal paths so they could be considered early in the design.</p>
-        <ul class="tags">
-          <li>Payload/bus CAD</li>
-          <li>Propulsion trade support</li>
-          <li>Trajectory &amp; margin sweeps</li>
-          <li>Interfaces &amp; packaging</li>
-          <li>Design reviews</li>
+        <h3 id="proj-mayfly">Scope</h3>
+        <p>
+          Concept study for returning a regolith sample from active comet 311P/PANSTARRS. Tight mass and power budgets drove
+          packaging and propulsion decisions while preserving a viable sampling payload and comms.
+        </p>
+
+        <h3>My contributions</h3>
+        <ul>
+          <li><strong>Payload/bus CAD:</strong> helped package the payload within a compact bus, establishing mechanical interfaces and tracking evolving mass properties.</li>
+          <li><strong>Propulsion trade support:</strong> compared solar-electric and chemical options; tied tankage and power to transfer time, ops windows, and risk.</li>
+          <li><strong>Trajectory &amp; margin sweeps:</strong> built quick scripts to sweep assumptions and generate plots used in reviews for rapid decision-making.</li>
+          <li><strong>Integration notes:</strong> flagged harness routing and thermal hot-spots early so panel cut-outs and connector choices could reflect them.</li>
         </ul>
+
+        <ul class="tags">
+          <li>Payload/bus CAD</li><li>Propulsion trades</li><li>Trajectory tools</li><li>Interfaces &amp; packaging</li><li>Review prep</li>
+        </ul>
+
         <div class="btnrow">
           <a class="btn primary" href="Mayfly_Sample_Return_Report.pdf" target="_blank" rel="noopener">Mission report (PDF)</a>
         </div>
@@ -254,6 +299,8 @@
 <footer>
   <p>© <span id="y"></span> Kyle Brown · <a href="mailto:Kylebrown978@yahoo.com">Email</a> · <a href="https://www.linkedin.com/in/kyle-v-brown">LinkedIn</a></p>
 </footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
