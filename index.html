@@ -11,15 +11,15 @@
     --pad: clamp(16px,3.2vw,28px);
     --radius: 14px;
 
-    --ink:#0e1116;            
+    --ink:#0e1116;
     --muted:#7a8599;
-    --bg:#0b1020;             
-    --panel:#11172b;          
-    --panel-2:#0f1526;        
+    --bg:#0b1020;
+    --panel:#11172b;
+    --panel-2:#0f1526;
     --border:#1f2741;
 
-    --brand:#2dc0ff;          
-    --brand-2:#7a5cff;        
+    --brand:#2dc0ff;
+    --brand-2:#7a5cff;
 
     --shadow: 0 10px 40px rgba(0,0,0,.25);
   }
@@ -30,9 +30,10 @@
     margin:0;
     font:16px/1.7 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
     color:#e8ecff;
-    background: radial-gradient(80rem 32rem at 10% -10%, #1b2444 0%, transparent 70%),
-                radial-gradient(80rem 32rem at 110% -20%, #1a2742 0%, transparent 70%),
-                var(--bg);
+    background:
+      radial-gradient(80rem 32rem at 10% -10%, #1b2444 0%, transparent 70%),
+      radial-gradient(80rem 32rem at 110% -20%, #1a2742 0%, transparent 70%),
+      var(--bg);
   }
   a{color:var(--brand);text-decoration-thickness:.12em;text-underline-offset:.22em}
   img{max-width:100%;height:auto;display:block;border-radius:12px}
@@ -80,11 +81,22 @@
     border-top-left-radius:14px;border-bottom-right-radius:14px;
     font-weight:700;letter-spacing:.2px
   }
-  .two{display:grid;grid-template-columns:1.25fr 1fr;gap:28px}
 
-  .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
+  /* PROJECT CARDS: stack media top, text bottom */
+  .two{
+    display:grid;
+    grid-template-columns:1fr;   /* <- single column */
+    gap:18px;
+  }
+
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+    margin-top:12px
+  }
   .gallery img.thumb{
-    aspect-ratio:4/3; 
+    aspect-ratio:4/3;
     width:100%;
     object-fit:cover;
     border-radius:10px;
@@ -114,8 +126,9 @@
 
   footer{border-top:1px solid var(--border);padding:var(--pad);text-align:center;color:#b8c4e3}
 
-  @media (max-width:1020px){.two{grid-template-columns:1fr}}
-  @media (max-width:860px){.about{grid-template-columns:1fr}}
+  @media (max-width:860px){
+    .about{grid-template-columns:1fr}
+  }
 </style>
 </head>
 <body>
@@ -157,6 +170,7 @@
 
     <!-- DRONE -->
     <article class="card two" aria-labelledby="proj-drone">
+      <!-- media (top) -->
       <div>
         <span class="ribbon">Autonomous Drone (MAV)</span>
         <figure>
@@ -165,9 +179,10 @@
         </figure>
         <div class="gallery" aria-label="Drone gallery">
           <img class="thumb" src="drones_build.png" alt="Prototype build">
-          <img class="thumb" src="drones_line.png" alt="Prototype lineup">
+          <img class="thumb" src="drones_line.png"  alt="Prototype lineup">
         </div>
       </div>
+      <!-- text (bottom) -->
       <div>
         <h3 id="proj-drone">What I did</h3>
         <p><strong>Controls &amp; integration:</strong> Implemented PD control with waypoint sequencing and telemetry tools for tuning. Designed the airframe and avionics stack in CAD, created LiDAR/IMU mounts, and routed a serviceable harness.</p>
@@ -183,6 +198,7 @@
 
     <!-- MAYFLY -->
     <article class="card two" aria-labelledby="proj-mayfly" style="margin-top:28px">
+      <!-- media (top) -->
       <div>
         <span class="ribbon">MAYFLY — Comet Sample Return</span>
         <figure>
@@ -190,6 +206,7 @@
           <figcaption class="caption">Bus & payload concept used for mission trade studies.</figcaption>
         </figure>
       </div>
+      <!-- text (bottom) -->
       <div>
         <h3 id="proj-mayfly">Mission Concept & My Role</h3>
         <p>
@@ -203,8 +220,8 @@
         <ul class="tags">
           <li>Payload/bus CAD</li>
           <li>Propulsion trades (SEP vs. chemical)</li>
-          <li>Trajectory & margin sweeps</li>
-          <li>Interfaces & packaging</li>
+          <li>Trajectory &amp; margin sweeps</li>
+          <li>Interfaces &amp; packaging</li>
           <li>Review prep</li>
         </ul>
 
@@ -267,6 +284,8 @@
 <footer>
   <p>© <span id="y"></span> Kyle Brown · <a href="mailto:Kylebrown978@yahoo.com">Email</a> · <a href="https://www.linkedin.com/in/kyle-v-brown">LinkedIn</a></p>
 </footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
